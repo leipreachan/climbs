@@ -75,7 +75,7 @@ export default function Home() {
           onSegmentFocus={handleSegmentFocus}
           onCheckUserResults={checkUserResults}
         />
-        <div className="h-[600px]">
+        <div className="h-[80vh]">
           <SegmentMap 
             segments={segments}
             selectedSegments={selectedSegments}

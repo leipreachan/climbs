@@ -146,16 +146,19 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
   )
 }
 
+function cleanCityName(city) {
+  return city.replace('UK', '').replace(/,\s+?$/, '').trim();
+}
+
 function createPopupHTML(segment) {
   return `
     <div class="p-2 max-w-sm">
       <h3 class="text-lg font-bold mb-2">${segment.name}</h3>
-      <p class="text-sm mb-1"><strong>Distance:</strong> ${segment.distance.toFixed(1)} m</p>
+      <p class="text-sm mb-1"><strong>Length:</strong> ${segment.distance.toFixed(1)} m</p>
       <p class="text-sm mb-1"><strong>Avg Grade:</strong> ${segment.average_grade.toFixed(1)}%</p>
       <p class="text-sm mb-1"><strong>Max Grade:</strong> ${segment.maximum_grade.toFixed(1)}%</p>
       <p class="text-sm mb-1"><strong>Elevation Gain:</strong> ${segment.total_elevation_gain.toFixed(1)} m</p>
-      <p class="text-sm mb-1"><strong>City:</strong> ${segment.city}</p>
-      <p class="text-sm"><strong>Country:</strong> ${segment.country}</p>
+      <p class="text-sm mb-1"><strong>Location:</strong> ${[cleanCityName(segment.city || ''), segment.country].join(', ')}</p>
     </div>
   `
 }
