@@ -37,7 +37,7 @@
       "polyline": "s~~wHvq{OBmDQmDMu@Q[]Ym@O_@@GFE?OKEM?_@D]FWBoAAM]kBO_@a@aBCUIQW_@MKOGq@MWCg@@y@k@S[Ou@KgAQiAEQE_@AGc@s@So@Ei@@yASuCCMGMe@]Yg@E?MNK?MGOMO[?QFSJOFCZ?ZUPWJi@Fk@AIEIm@_@SCI@SAYIkAqBGc@QSSa@GECOMSMC_@{@Wc@{@gCUsB?OBYPq@Bo@UeBo@_BQq@SsBEaCIwAHuC?i@GqCJe@Vi@V_@Zw@FWNcAA]GWM][W[OYEa@?]Kq@c@Yc@Mq@IiA@uCBWPq@d@y@`@c@^Wf@MvBDz@GlA?d@Ml@IbA?`@FZLHHd@p@H~@\\zAN`@p@dAl@f@b@b@f@VvAXhBUNKRc@Rq@Fi@DeAAk@Dg@DkBDMPc@b@u@~AsA^Un@YhA{@`@k@d@_Aj@{Cl@kCt@aCn@wAr@{@DIHC",
       "resource_state": 3
     },
-    "effort_count": 210071,
+    "effort_count": 210078,
     "athlete_count": 32140,
     "star_count": 320,
     "athlete_segment_stats": {
@@ -62,11 +62,11 @@
       "athlete_id": 11774381,
       "title": "K R",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/11774381/4235912/2/large.jpg",
-      "effort_description": "33 efforts in the last 90 days",
-      "effort_count": "33",
+      "effort_description": "32 efforts in the last 90 days",
+      "effort_count": "32",
       "effort_counts": {
-        "overall": "33 efforts",
-        "female": "20 efforts"
+        "overall": "32 efforts",
+        "female": "19 efforts"
       },
       "destination": "strava://segments/7669287/local_legend?categories%5B%5D=overall"
     }
@@ -566,10 +566,10 @@
       "athlete_id": 664334,
       "title": "Steve James",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/664334/144434/1/large.jpg",
-      "effort_description": "10 efforts in the last 90 days",
-      "effort_count": "10",
+      "effort_description": "9 efforts in the last 90 days",
+      "effort_count": "9",
       "effort_counts": {
-        "overall": "10 efforts",
+        "overall": "9 efforts",
         "female": "3 efforts"
       },
       "destination": "strava://segments/6665214/local_legend?categories%5B%5D=overall"
@@ -720,46 +720,46 @@
     }
   },
   {
-    "id": 1256009,
+    "id": 6665277,
     "resource_state": 3,
-    "name": "100 greatest Climbs - Rundlestone",
+    "name": "Rundlestone",
     "activity_type": "Ride",
-    "distance": 8686.54,
+    "distance": 8708.7,
     "average_grade": 4,
-    "maximum_grade": 14.3,
-    "elevation_high": 456.8,
-    "elevation_low": 109.5,
+    "maximum_grade": 20.1,
+    "elevation_high": 462.4,
+    "elevation_low": 112.2,
     "start_latlng": [
-      50.552686,
-      -4.127455
+      50.552606,
+      -4.127766
     ],
     "end_latlng": [
-      50.55706,
-      -4.012215
+      50.557078,
+      -4.012617
     ],
-    "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/VHX5RPWWJ472VFURRJ4YIBMKERWJK6WK3TIA3W5QYAPCHKLSMREVM2P4GQ3JGPOZ6LUE3KZWPCT7JCW5SWJPCWHC",
+    "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/YXPWLZANNUHHRTXVT3PJ57O7USZ5LB2WENPX6553I6V7VYCIUOSCRMF5UQFWGFIUBPL4YGIESI5OSTG6552YS7Q=",
     "elevation_profiles": {
-      "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/VHX5RPWWJ472VFURRJ4YIBMKERWJK6WK3TIA3W5QYAPCHKLSMREVM2P4GQ3JGPOZ6LUE3KZWPCT7JCW5SWJPCWHC",
-      "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/FLVBJUI25IMP7YXAFS6Y5Y5IDFDJWA4TPYHTB5VCVYKJ2C42HQMPYCPBGUVUROETZPVXKYMAZZVAIVSOQWWVVEV6"
+      "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/YXPWLZANNUHHRTXVT3PJ57O7USZ5LB2WENPX6553I6V7VYCIUOSCRMF5UQFWGFIUBPL4YGIESI5OSTG6552YS7Q=",
+      "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/J4DC3NEFWDF7U7E57D4L4TLSPXILUZUGXIRQJPDT24DPQ52QAP4BHEPHBDE7QQDDQX2SAQHESRJPQBXW32UG4VI="
     },
     "climb_category": 3,
     "city": "Tavistock",
-    "state": "Devon County",
+    "state": "England",
     "country": "United Kingdom",
     "private": false,
     "hazardous": false,
     "starred": true,
-    "created_at": "2012-04-20T06:36:31Z",
-    "updated_at": "2021-05-19T08:02:01Z",
-    "total_elevation_gain": 406.384,
+    "created_at": "2014-02-15T08:38:47Z",
+    "updated_at": "2024-09-11T22:19:32Z",
+    "total_elevation_gain": 399.4,
     "map": {
-      "id": "s1256009",
-      "polyline": "gqpsHrceXMgAW}@Ky@@y@Ly@Ne@Jk@PsADs@Aq@BiDLoD`@cHd@yDTiEBw@A}BDgACeABaALqDOgEQgC@y@GgAB}@O_EIiEDkDH}A@kAG}FJcPAwEB{LEkENeLCiAGgAOeAQ_Aq@uBs@sB}@kDo@mB]q@}CgFmAeCs@sBsAeDe@{Aa@}@Y{@aBoD_AwA_BkC_@{@YaASe@kAyFgAyEe@aCu@_G]}CUcDEkB?qAD_ADi@lAuEd@wAXmA`@oBR{@x@cENiABoAMeDA_Df@e^JwA^_Cx@kE^gBz@yEVsBRwBHqB@gBQcEi@wJs@oNYcMCuCYaDw@}CmCwHm@cDMeDb@kDhAwChAaCt@iB\\sALaADu@@s@EmCQaIKmBQiAqAgFOaAQyA@kADYLo@xDcJn@gBXiATyAN}AL{D?eBGeBU_DSqBYsDKmBEiBG_D?yCJqJA{CWaEwAgPG_B@{Ab@mMH}Ad@kEFw@B}@A_BIoAWcCUiCQuCMcCCgCByDHqD?}@",
+      "id": "s6665277",
+      "polyline": "wppsHpeeX{@aFEm@Bk@BSj@aCHw@FgAC_A?w@LaB@aBHuC@iAPgBDiARkAp@mIQoCBcCHgDC_DYkGEqB@cGMkJFsBD{B?aFF_JHgWEuF?yDH}FAkAOgBYsAmB{F{@iDc@mAq@uAaBeCqA}B{AoDSo@k@uASm@{@gBW_AkA}Cg@aAmAkBUc@e@m@U_@[u@k@iBy@aEcAcEIg@g@{B]qBMoA_@wC]qDUaE@kCNyA`AuDn@qBf@eCb@cBPkAVw@ReAJ_A@kBMmE?o@d@q^DyAPoAtAuHdAiFb@{CZkEDoCEiBKgCwA{XKiDI{JE{@K{AUaBo@eCm@oBwAuD]mA_@mBGa@GcABkAFgA^iB\\cApCiGf@uAFWPmAHq@@i@EmCMoDG}CGwASmA}@iDc@{BUeBC{@BWFk@H[tAcDNUXo@l@{Av@yB^oATuANiALiGEsCSwCe@wFSqDK_DAwB?wDJiICoDs@iKKo@k@iGGwABiC^}LJqB^gDLqB?cBIoAYcCIkAQcCEkAKcAEeA?uEFiG",
       "resource_state": 3
     },
-    "effort_count": 29249,
-    "athlete_count": 7832,
-    "star_count": 84,
+    "effort_count": 29128,
+    "athlete_count": 7687,
+    "star_count": 951,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -769,11 +769,11 @@
       "effort_count": 0
     },
     "xoms": {
-      "kom": "17:19",
+      "kom": "17:18",
       "qom": "23:19",
-      "overall": "17:19",
+      "overall": "17:18",
       "destination": {
-        "href": "strava://segments/1256009/leaderboard",
+        "href": "strava://segments/6665277/leaderboard",
         "type": "overall",
         "name": "All-Time"
       }
@@ -788,7 +788,7 @@
         "overall": "12 efforts",
         "female": "2 efforts"
       },
-      "destination": "strava://segments/1256009/local_legend?categories%5B%5D=overall"
+      "destination": "strava://segments/6665277/local_legend?categories%5B%5D=overall"
     }
   },
   {
@@ -925,7 +925,7 @@
     "local_legend": {
       "athlete_id": 1310528,
       "title": "Geoff Powell",
-      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1310528/26696235/1/large.jpg",
+      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1310528/26696235/2/large.jpg",
       "effort_description": "7 efforts in the last 90 days",
       "effort_count": "7",
       "effort_counts": {
@@ -975,7 +975,7 @@
     },
     "effort_count": 36748,
     "athlete_count": 8518,
-    "star_count": 1298,
+    "star_count": 1299,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -997,7 +997,7 @@
     "local_legend": {
       "athlete_id": 1310528,
       "title": "Geoff Powell",
-      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1310528/26696235/1/large.jpg",
+      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1310528/26696235/2/large.jpg",
       "effort_description": "7 efforts in the last 90 days",
       "effort_count": "7",
       "effort_counts": {
@@ -1045,7 +1045,7 @@
       "polyline": "uhzwHt_~@@MCy@Iu@Aw@Hw@Nq@r@mClB}FlDeIrAqDd@cAf@_Ah@w@l@o@fAs@dAi@TQFMBQASEQGOIIMAeAX_A`@{@b@iAx@k@j@{GbIk@b@IAIGCk@D[H]hCmDlEcI~CsDnBiBx@k@zCeBnAaAtCmBx@e@l@e@bDgDp@e@PGF@DFLp@DfA?vEDtAJp@Tj@f@x@TZZL^G^O`@M",
       "resource_state": 3
     },
-    "effort_count": 1363566,
+    "effort_count": 1363565,
     "athlete_count": 146405,
     "star_count": 3613,
     "athlete_segment_stats": {
@@ -1070,10 +1070,10 @@
       "athlete_id": 3122543,
       "title": "gary boulcott",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/3122543/3378695/1/large.jpg",
-      "effort_description": "106 efforts in the last 90 days",
-      "effort_count": "106",
+      "effort_description": "107 efforts in the last 90 days",
+      "effort_count": "107",
       "effort_counts": {
-        "overall": "106 efforts",
+        "overall": "107 efforts",
         "female": "32 efforts"
       },
       "destination": "strava://segments/6695759/local_legend?categories%5B%5D=overall"
@@ -1117,7 +1117,7 @@
       "polyline": "ysywHj|}@IMKEm@GoA?w@Hc@Xm@VeAl@i@VSVKF{@\\u@@y@O_@ASIEO_@qCAo@LkAh@wBl@mBp@iCn@aBBOnAyCDOz@iBjBqEr@qAh@i@NSTW^Yr@_@nAw@\\[DIFWC[CKKKOCYB{@PqAf@kAp@sAnAwAbBk@t@m@j@KPe@`@MPk@f@IPSIGQAMBa@LML_@RQ`@k@HGPa@v@sAbAyBpA}Bv@eA`AkAnBoBb@a@|@s@zA{@`By@PM\\]FCZWNIBEv@g@z@a@r@e@ZWHEd@o@ZO~AcB\\QDKRKFAHDFJBLDrAI~@@z@DXV`DJ\\PLd@v@b@h@RFf@AtAUZDv@RNHN@LIZ]Pk@x@eBDUDu@@w@AyAEy@CYe@kCm@iCYaBI}@McCGeD@wECyH?oD\\iKPiBPsAB[@w@OeB_@_CSyBW{AWwBUmAOoAo@cI",
       "resource_state": 3
     },
-    "effort_count": 800588,
+    "effort_count": 800578,
     "athlete_count": 107650,
     "star_count": 326,
     "athlete_segment_stats": {
@@ -1142,10 +1142,10 @@
       "athlete_id": 3122543,
       "title": "gary boulcott",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/3122543/3378695/1/large.jpg",
-      "effort_description": "59 efforts in the last 90 days",
-      "effort_count": "59",
+      "effort_description": "60 efforts in the last 90 days",
+      "effort_count": "60",
       "effort_counts": {
-        "overall": "59 efforts",
+        "overall": "60 efforts",
         "female": "13 efforts"
       },
       "destination": "strava://segments/934721/local_legend?categories%5B%5D=overall"
@@ -1189,7 +1189,7 @@
       "polyline": "ixvwHsl[q@p@UNUHm@JkBRmBr@MB}Fi@_Cb@{ASoALaApBeBfA_AxA",
       "resource_state": 3
     },
-    "effort_count": 44910,
+    "effort_count": 44909,
     "athlete_count": 14726,
     "star_count": 1382,
     "athlete_segment_stats": {
@@ -1261,7 +1261,7 @@
       "polyline": "k}qwHhyoA{@OWKqB{AmAe@c@OuAMqCi@YIWQoCiCkBgAoBoBkDwDqDqEuAaBYY[GcA?eBRaAB}@AaAIs@OmAMwBDYFGHELDbCKRGBK?IIKSoEoKi@aAs@cAiAgAg@a@KEk@U]C_Du@eAw@gAs@aA_@]K",
       "resource_state": 3
     },
-    "effort_count": 210446,
+    "effort_count": 210448,
     "athlete_count": 42339,
     "star_count": 2885,
     "athlete_segment_stats": {
@@ -1286,10 +1286,10 @@
       "athlete_id": 18938217,
       "title": "Hugh Skeil",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/18938217/6710357/2/large.jpg",
-      "effort_description": "53 efforts in the last 90 days",
-      "effort_count": "53",
+      "effort_description": "52 efforts in the last 90 days",
+      "effort_count": "52",
       "effort_counts": {
-        "overall": "53 efforts",
+        "overall": "52 efforts",
         "female": "10 efforts"
       },
       "destination": "strava://segments/6691301/local_legend?categories%5B%5D=overall"
@@ -1333,7 +1333,7 @@
       "polyline": "uevvH{`Nh@_@rD_DvDiDv@{@x@_BhFcL`AeB~AcCzCaKzNce@Z{@f@iAdCyE",
       "resource_state": 3
     },
-    "effort_count": 96705,
+    "effort_count": 96700,
     "athlete_count": 19351,
     "star_count": 2529,
     "athlete_segment_stats": {
@@ -1405,7 +1405,7 @@
       "polyline": "ezswHytS_@[sDiAyEoBOIsEaESKcAUsC]}Ha@aHNaDo@iIfAyFhCqB]_H|@_DFcAjAmCdEeFjEiC`Co@Ly@BiFg@cHDiAe@yEmCaBC",
       "resource_state": 3
     },
-    "effort_count": 58381,
+    "effort_count": 58380,
     "athlete_count": 13993,
     "star_count": 1313,
     "athlete_segment_stats": {
@@ -1479,7 +1479,79 @@
     },
     "effort_count": 62917,
     "athlete_count": 7584,
-    "star_count": 1565,
+    "star_count": 1567,
+    "athlete_segment_stats": {
+      "pr_elapsed_time": null,
+      "pr_date": null,
+      "pr_visibility": null,
+      "pr_activity_id": null,
+      "pr_activity_visibility": null,
+      "effort_count": 0
+    },
+    "xoms": {
+      "kom": "3:47",
+      "qom": "4:53",
+      "overall": "3:47",
+      "destination": {
+        "href": "strava://segments/6691367/leaderboard",
+        "type": "overall",
+        "name": "All-Time"
+      }
+    },
+    "local_legend": {
+      "athlete_id": 17956525,
+      "title": "Mike Finch (SRVC)",
+      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/17956525/5097398/19/large.jpg",
+      "effort_description": "33 efforts in the last 90 days",
+      "effort_count": "33",
+      "effort_counts": {
+        "overall": "33 efforts",
+        "female": "5 efforts"
+      },
+      "destination": "strava://segments/6691367/local_legend?categories%5B%5D=overall"
+    }
+  },
+  {
+    "id": 6691367,
+    "resource_state": 3,
+    "name": "Steyning Bostal",
+    "activity_type": "Ride",
+    "distance": 1556.59,
+    "average_grade": 10.4,
+    "maximum_grade": 18,
+    "elevation_high": 143.4,
+    "elevation_low": 22.1,
+    "start_latlng": [
+      50.88372,
+      -0.326183
+    ],
+    "end_latlng": [
+      50.87775,
+      -0.343813
+    ],
+    "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/NSRXWTZTQWILOVDXK35CCJQBMRNFJVKN2445XQDDPW7TAAEJCFW6576RDIHAXJJHWEQO6KT3IQU564PKWQZRI7Y=",
+    "elevation_profiles": {
+      "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/NSRXWTZTQWILOVDXK35CCJQBMRNFJVKN2445XQDDPW7TAAEJCFW6576RDIHAXJJHWEQO6KT3IQU564PKWQZRI7Y=",
+      "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/5ZM4H2F44WTRH242I2G2OFVZS5OCJCMWDNYEYOJGVYQNIYO3NBLPLCIGX7ZDVWGMRZQ4O7XRKCYXVVZKA7YOO7Q="
+    },
+    "climb_category": 1,
+    "city": "Steyning",
+    "state": "England",
+    "country": "United Kingdom",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "created_at": "2014-02-17T20:53:00Z",
+    "updated_at": "2024-09-11T20:28:43Z",
+    "total_elevation_gain": 121.3,
+    "map": {
+      "id": "s6691367",
+      "polyline": "gfquHzu~@b@XPLRVFN`F|Qf@t@nArCj@lBt@dEFpAWxQO|P@h@Hf@Rj@~@fApAfB\\dA~@rIRr@V`@`@`@l@Vl@HdBD`@Hj@ZPLVb@Pb@PdA",
+      "resource_state": 3
+    },
+    "effort_count": 62917,
+    "athlete_count": 7584,
+    "star_count": 1567,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -1549,7 +1621,7 @@
       "polyline": "euvzHvf_DXcAzCwHx@{BX[L]PUDe@N]Fi@\\qAJm@NgA?c@Dw@DyDBs@Dm@Fg@?e@H_A@{@Hm@J]T_@LKNIPCl@UVWNIP?NEZSVA\\DR?f@FRHX@REd@Dp@AXETAVEn@g@d@c@JWF[Ne@Cc@F]Rw@Fo@He@bAeEDs@Xc@p@wA",
       "resource_state": 3
     },
-    "effort_count": 65723,
+    "effort_count": 65724,
     "athlete_count": 15939,
     "star_count": 55,
     "athlete_segment_stats": {
@@ -1571,9 +1643,9 @@
       }
     },
     "local_legend": {
-      "athlete_id": 8230932,
-      "title": "Aidan Buttigieg 🇲🇹🚀",
-      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/8230932/11227752/11/large.jpg",
+      "athlete_id": 15020452,
+      "title": "Antony Woods",
+      "profile": "avatar/athlete/large.png",
       "effort_description": "14 efforts in the last 90 days",
       "effort_count": "14",
       "effort_counts": {
@@ -1621,7 +1693,7 @@
       "polyline": "azvzHxq_Dp@_B~@mCdAuDXu@`DoIrA{C\\kAj@wCJ_BFqCh@wL@MJWhAk@lCy@nFL`BWTAb@]^m@b@mAXgALy@VkCr@uD^cB",
       "resource_state": 3
     },
-    "effort_count": 64769,
+    "effort_count": 64770,
     "athlete_count": 15937,
     "star_count": 2185,
     "athlete_segment_stats": {
@@ -1643,9 +1715,9 @@
       }
     },
     "local_legend": {
-      "athlete_id": 8230932,
-      "title": "Aidan Buttigieg 🇲🇹🚀",
-      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/8230932/11227752/11/large.jpg",
+      "athlete_id": 15020452,
+      "title": "Antony Woods",
+      "profile": "avatar/athlete/large.png",
       "effort_description": "14 efforts in the last 90 days",
       "effort_count": "14",
       "effort_counts": {
@@ -1786,6 +1858,78 @@
         "female": "10 efforts"
       },
       "destination": "strava://segments/6665255/local_legend?categories%5B%5D=overall"
+    }
+  },
+  {
+    "id": 6691219,
+    "resource_state": 3,
+    "name": "Mott Street",
+    "activity_type": "Ride",
+    "distance": 1504.1,
+    "average_grade": 5.1,
+    "maximum_grade": 17.8,
+    "elevation_high": 118.6,
+    "elevation_low": 41.2,
+    "start_latlng": [
+      51.662021,
+      0.0105
+    ],
+    "end_latlng": [
+      51.661416,
+      0.030232
+    ],
+    "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/LX5PQQLKDV6RM66NC2ETWJ3YRTTV37HQTJBUJFPNMKCBEC3YCJFLPUXVIGVQN5DMICFKRROP6HWFEMFKQTLICXA=",
+    "elevation_profiles": {
+      "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/LX5PQQLKDV6RM66NC2ETWJ3YRTTV37HQTJBUJFPNMKCBEC3YCJFLPUXVIGVQN5DMICFKRROP6HWFEMFKQTLICXA=",
+      "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/LZTXLYLPCCBCZMA45NJ5SJKEEEWGPOSQNQRRNXFRY6NBYXTLOWSAJJWTXRJTA3SYOS2Q4FAVL3HP3BELIANQODA="
+    },
+    "climb_category": 0,
+    "city": "Waltham Abbey",
+    "state": "England",
+    "country": "United Kingdom",
+    "private": false,
+    "hazardous": false,
+    "starred": false,
+    "created_at": "2014-02-17T20:33:46Z",
+    "updated_at": "2024-09-11T22:22:32Z",
+    "total_elevation_gain": 77.4,
+    "map": {
+      "id": "s6691219",
+      "polyline": "sfizHs`Aj@s@Xu@n@mD~@yHJmB?o@Ca@GUuAoCWs@EWGq@C}AKuACy@Gi@OgAMY[a@u@kBo@sCQyAE}@Cy@@kAHwAZgA^i@n@w@NYJeBAWBSNw@Pa@Ng@b@gCPwAJa@?}ALm@B[Iu@@cAE{BB_BJoC@y@JoAFmBCeBIm@Mm@",
+      "resource_state": 3
+    },
+    "effort_count": 122801,
+    "athlete_count": 16274,
+    "star_count": 843,
+    "athlete_segment_stats": {
+      "pr_elapsed_time": 367,
+      "pr_date": "2020-05-31",
+      "pr_visibility": "everyone",
+      "pr_activity_id": 3540677795,
+      "pr_activity_visibility": "everyone",
+      "effort_count": 1
+    },
+    "xoms": {
+      "kom": "2:57",
+      "qom": "3:29",
+      "overall": "2:57",
+      "destination": {
+        "href": "strava://segments/6691219/leaderboard",
+        "type": "overall",
+        "name": "All-Time"
+      }
+    },
+    "local_legend": {
+      "athlete_id": 2144516,
+      "title": "James Phillips",
+      "profile": "https://lh3.googleusercontent.com/a/ACg8ocKcK-GQrrjC_gYKJLUZuRmPi92eUFIK5MJVHJVKegtkAGABAlt_=s96-c",
+      "effort_description": "30 efforts in the last 90 days",
+      "effort_count": "30",
+      "effort_counts": {
+        "overall": "30 efforts",
+        "female": "6 efforts"
+      },
+      "destination": "strava://segments/6691219/local_legend?categories%5B%5D=overall"
     }
   },
   {
@@ -1948,7 +2092,7 @@
       "polyline": "wwxaIbk_DnEgF\\Y|@a@r@SXKv@e@rAm@\\MzAy@lA}@NUTg@^m@Pi@Rc@f@g@NCRKD?LCV?^N`@BVLXFbBC^Gr@UHIn@Sd@a@HAd@Yd@[t@_@h@[^Kr@Y^Kp@]h@w@",
       "resource_state": 3
     },
-    "effort_count": 44821,
+    "effort_count": 44820,
     "athlete_count": 8265,
     "star_count": 1085,
     "athlete_segment_stats": {
@@ -2117,10 +2261,10 @@
       "athlete_id": 49382160,
       "title": "Andrew Corker",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/49382160/13367381/1/large.jpg",
-      "effort_description": "4 efforts in the last 90 days",
-      "effort_count": "4",
+      "effort_description": "3 efforts in the last 90 days",
+      "effort_count": "3",
       "effort_counts": {
-        "overall": "4 efforts",
+        "overall": "3 efforts",
         "female": "1 effort"
       },
       "destination": "strava://segments/6677679/local_legend?categories%5B%5D=overall"
@@ -2308,7 +2452,7 @@
       "polyline": "ifqdIbe}IJlA\\xAxAbFfAhC`@zA\\xBFx@@~@Gd@M\\q@vAa@hAYlAa@`C_@tA_AbCeBpDa@tAi@vAOf@Kd@Ir@]xGU`D",
       "resource_state": 3
     },
-    "effort_count": 76864,
+    "effort_count": 76865,
     "athlete_count": 28344,
     "star_count": 1216,
     "athlete_segment_stats": {
@@ -2621,10 +2765,10 @@
       "athlete_id": 22728794,
       "title": "Jake Swan",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/22728794/25257747/3/large.jpg",
-      "effort_description": "14 efforts in the last 90 days",
-      "effort_count": "14",
+      "effort_description": "13 efforts in the last 90 days",
+      "effort_count": "13",
       "effort_counts": {
-        "overall": "14 efforts",
+        "overall": "13 efforts",
         "female": "3 efforts"
       },
       "destination": "strava://segments/1013653/local_legend?categories%5B%5D=overall"
@@ -2742,7 +2886,7 @@
     },
     "effort_count": 11691,
     "athlete_count": 4301,
-    "star_count": 804,
+    "star_count": 836,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -2769,7 +2913,7 @@
       "effort_count": "30",
       "effort_counts": {
         "overall": "30 efforts",
-        "female": "16 efforts"
+        "female": "15 efforts"
       },
       "destination": "strava://segments/6690966/local_legend?categories%5B%5D=overall"
     }
@@ -2837,10 +2981,10 @@
       "athlete_id": 6412523,
       "title": "Andrew Gibson",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/6412523/20456870/1/large.jpg",
-      "effort_description": "16 efforts in the last 90 days",
-      "effort_count": "16",
+      "effort_description": "15 efforts in the last 90 days",
+      "effort_count": "15",
       "effort_counts": {
-        "overall": "16 efforts",
+        "overall": "15 efforts",
         "female": "3 efforts"
       },
       "destination": "strava://segments/635214/local_legend?categories%5B%5D=overall"
@@ -2909,10 +3053,10 @@
       "athlete_id": 6412523,
       "title": "Andrew Gibson",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/6412523/20456870/1/large.jpg",
-      "effort_description": "18 efforts in the last 90 days",
-      "effort_count": "18",
+      "effort_description": "17 efforts in the last 90 days",
+      "effort_count": "17",
       "effort_counts": {
-        "overall": "18 efforts",
+        "overall": "17 efforts",
         "female": "6 efforts"
       },
       "destination": "strava://segments/6691272/local_legend?categories%5B%5D=overall"
@@ -2958,7 +3102,7 @@
     },
     "effort_count": 3596,
     "athlete_count": 1546,
-    "star_count": 533,
+    "star_count": 534,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -3100,7 +3244,7 @@
       "polyline": "uvzjIbn|KFDJEHUf@eATOJDNp@FRNVRRb@XN?NYH_@\\UL?FDRr@VPV?JE\\QJK`@s@`@e@Pm@NmCZiDL{@n@_Ct@uBP[j@s@rAwAjAyArAuBb@k@~@{@d@KN?fBJv@Aj@G|@SFENARIbAMf@O`AObABx@Az@k@rASv@a@ZEf@@j@VXHnADT?VWTu@XoA`@gAr@yANQf@c@v@gAj@q@JENMTGF@RCHBL@FCT?NGLON@LB\\Xl@Rj@F^OHIf@kAHIPOn@WVAn@N^Df@B^CjAWPId@GHG`@ELINAdBe@RMXo@VqCNg@t@wAH_@Cg@IYAM@UDINELK~@MDCF?f@S~A{@l@c@zA{@h@e@j@u@`A_AVe@|@cAp@aAn@y@lBcDpBeBj@m@h@a@ZSz@YtAM`@Kf@]`@]~AkAlBgB`Ak@nBu@tA}@d@Ql@c@n@kAJMFELAPMTE^S`@s@^aANu@RiBzAwEPc@R_@V]j@_ANc@",
       "resource_state": 3
     },
-    "effort_count": 8573,
+    "effort_count": 8574,
     "athlete_count": 4225,
     "star_count": 713,
     "athlete_segment_stats": {
@@ -3413,11 +3557,11 @@
       "athlete_id": 9126622,
       "title": "Jill Armstrong",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/9126622/3098825/5/large.jpg",
-      "effort_description": "7 efforts in the last 90 days",
-      "effort_count": "7",
+      "effort_description": "6 efforts in the last 90 days",
+      "effort_count": "6",
       "effort_counts": {
-        "overall": "7 efforts",
-        "female": "7 efforts"
+        "overall": "6 efforts",
+        "female": "6 efforts"
       },
       "destination": "strava://segments/6697314/local_legend?categories%5B%5D=overall"
     }
@@ -3820,9 +3964,9 @@
       "polyline": "weghIrpgI}@WyAOw@Dm@NwAhAi@Xm@D_Fw@WAUBYHu@XeAp@WDYEs@i@kFcGi@gAgCwI]_AKQSQWGWA[FOFOLYb@M\\OlAOlEK`AKb@Q`@[f@o@\\m@@eBEm@De@Fw@ZqDnBs@f@mA|Ay@rAYXIHeAXeCn@y@Hc@Gk@QkA_A",
       "resource_state": 3
     },
-    "effort_count": 101672,
+    "effort_count": 101670,
     "athlete_count": 12892,
-    "star_count": 1578,
+    "star_count": 1874,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -4038,7 +4182,7 @@
     },
     "effort_count": 32242,
     "athlete_count": 9422,
-    "star_count": 1137,
+    "star_count": 1138,
     "athlete_segment_stats": {
       "pr_elapsed_time": null,
       "pr_date": null,
@@ -4130,9 +4274,9 @@
       }
     },
     "local_legend": {
-      "athlete_id": 49943908,
-      "title": "michael sadler",
-      "profile": "https://lh3.googleusercontent.com/a/ACg8ocLU_6TJU5kel05yZzp0rrkqHaOd4syvpccTEMF7zHhIk2IwHTE=s96-c",
+      "athlete_id": 2921595,
+      "title": "Joe Vernon",
+      "profile": "avatar/athlete/large.png",
       "effort_description": "14 efforts in the last 90 days",
       "effort_count": "14",
       "effort_counts": {
@@ -4212,6 +4356,78 @@
         "female": "3 efforts"
       },
       "destination": "strava://segments/11128096/local_legend?categories%5B%5D=overall"
+    }
+  },
+  {
+    "id": 7669287,
+    "resource_state": 3,
+    "name": "Cheddar Gorge (100 Greatest Climbs)",
+    "activity_type": "Ride",
+    "distance": 3535.8,
+    "average_grade": 4.7,
+    "maximum_grade": 27,
+    "elevation_high": 184.4,
+    "elevation_low": 19,
+    "start_latlng": [
+      51.281868,
+      -2.767796
+    ],
+    "end_latlng": [
+      51.279559,
+      -2.739297
+    ],
+    "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/QESNIWJ4TE6TNYRKUTA6XBSU74SGRQUVI5GP5T3WENTE2UV2V44NI54IWAQCKBU2WJLH2JKRZ3ADHI5MHA4XJK4D",
+    "elevation_profiles": {
+      "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/QESNIWJ4TE6TNYRKUTA6XBSU74SGRQUVI5GP5T3WENTE2UV2V44NI54IWAQCKBU2WJLH2JKRZ3ADHI5MHA4XJK4D",
+      "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/L3XNPZELBNWVYE3LSGQSYPQPFEBFCDON66TJH6LY22ZWJ3ZEMUMATMHZVVLMK7RFS3UQAL32APWKS227ZBDMXFNK"
+    },
+    "climb_category": 2,
+    "city": "Cheddar",
+    "state": "England",
+    "country": "United Kingdom",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "created_at": "2014-07-17T16:17:38Z",
+    "updated_at": "2021-05-20T08:03:04Z",
+    "total_elevation_gain": 165.4,
+    "map": {
+      "id": "s7669287",
+      "polyline": "s~~wHvq{OBmDQmDMu@Q[]Ym@O_@@GFE?OKEM?_@D]FWBoAAM]kBO_@a@aBCUIQW_@MKOGq@MWCg@@y@k@S[Ou@KgAQiAEQE_@AGc@s@So@Ei@@yASuCCMGMe@]Yg@E?MNK?MGOMO[?QFSJOFCZ?ZUPWJi@Fk@AIEIm@_@SCI@SAYIkAqBGc@QSSa@GECOMSMC_@{@Wc@{@gCUsB?OBYPq@Bo@UeBo@_BQq@SsBEaCIwAHuC?i@GqCJe@Vi@V_@Zw@FWNcAA]GWM][W[OYEa@?]Kq@c@Yc@Mq@IiA@uCBWPq@d@y@`@c@^Wf@MvBDz@GlA?d@Ml@IbA?`@FZLHHd@p@H~@\\zAN`@p@dAl@f@b@b@f@VvAXhBUNKRc@Rq@Fi@DeAAk@Dg@DkBDMPc@b@u@~AsA^Un@YhA{@`@k@d@_Aj@{Cl@kCt@aCn@wAr@{@DIHC",
+      "resource_state": 3
+    },
+    "effort_count": 210078,
+    "athlete_count": 32140,
+    "star_count": 320,
+    "athlete_segment_stats": {
+      "pr_elapsed_time": null,
+      "pr_date": null,
+      "pr_visibility": null,
+      "pr_activity_id": null,
+      "pr_activity_visibility": null,
+      "effort_count": 0
+    },
+    "xoms": {
+      "kom": "6:45",
+      "qom": "8:14",
+      "overall": "6:45",
+      "destination": {
+        "href": "strava://segments/7669287/leaderboard",
+        "type": "overall",
+        "name": "All-Time"
+      }
+    },
+    "local_legend": {
+      "athlete_id": 11774381,
+      "title": "K R",
+      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/11774381/4235912/2/large.jpg",
+      "effort_description": "32 efforts in the last 90 days",
+      "effort_count": "32",
+      "effort_counts": {
+        "overall": "32 efforts",
+        "female": "19 efforts"
+      },
+      "destination": "strava://segments/7669287/local_legend?categories%5B%5D=overall"
     }
   },
   {
@@ -4540,7 +4756,7 @@
       "polyline": "wxwyIpjbTc@[yAwAaAoAmAqBqAeBuAuAcAw@k@_@k@c@g@u@[[YIY?wCXwAB_EuBSEK?gARI?{A}@]GM?YK]CsDe@g@Q{AcAqBMm@Km@QMGe@c@o@u@_Au@cEyBe@[gFuCgC}AyAw@iAs@gCiCkDaDoCuAcBq@c@KKCY?KBg@\\cAhA}@p@{@Ta@A_AQyABk@C]Iu@c@eA_AmBcDgEkGUi@eDiJiA}CoDiFaAmAq@u@qA_BaD_Hi@}@qAiBkBqBmFaF_KaKu@s@gBoAkCyAiD_BiFoCgI_E}@_@gCaAqI}B}Bw@yB}@qAu@{@k@kC_CiQcOwG{Fs@s@s@y@SW{AoC{@gBg@sAe@uBWw@YyAk@sDkEsZ]kCYuAYcAw@gDe@{Am@wAg@gAkAgBo@w@mAkAiAw@k@YSEOM}@[aCe@}Fw@yBa@gAOc@IGES?SCKE]CQGW@MG]Ck@KyB]u@Gy@AoA?iBFSCQDKCIDW?EBy@LgARKDo@Fm@NuAVK?MFq@JYHU?e@LC@IEMDKASDK?WHYAQFQAe@J_AHkAR[@]Bq@@]Nq@TaAT",
       "resource_state": 3
     },
-    "effort_count": 14822,
+    "effort_count": 14821,
     "athlete_count": 5842,
     "star_count": 471,
     "athlete_segment_stats": {
@@ -4612,7 +4828,7 @@
       "polyline": "wl|{IpzuRq@Ms@Ik@@OEi@F]?EC[Dc@N]XQTgAvBMLWd@ID[f@KFKPQLODYCQKm@k@QWo@o@iAuAOK_@KQBMH_@^a@x@On@Eh@QdGG`@IzAKt@[dA{@hBMj@IR[p@QH_@G_@[g@kAU]m@CcCHo@Ay@W_Aa@u@S[?eFNiGVm@Nk@VuGpDm@Rk@ZMBo@`@YJUL]Hq@Vu@ZiBbAgDvBeAj@eBlAkAdAu@`@wGrA{@Ne@D_@PeAFg@Ry@F]F_@Ru@LaBRaA@y@Qs@Cm@KqAe@qAk@SC{@Ni@Vm@R}@\\e@XSP{BrCuA|Am@l@a@Z{@b@uAb@YDkAJgARk@Te@XaAdA{@dA{BjDwDrFa@l@eAlAwBfB{CtDUTm@d@iAr@wBbAm@V",
       "resource_state": 3
     },
-    "effort_count": 15223,
+    "effort_count": 15222,
     "athlete_count": 5589,
     "star_count": 523,
     "athlete_segment_stats": {
@@ -4914,10 +5130,10 @@
       "athlete_id": 1876048,
       "title": "Tom Bowers",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1876048/2118394/2/large.jpg",
-      "effort_description": "14 efforts in the last 90 days",
-      "effort_count": "14",
+      "effort_description": "13 efforts in the last 90 days",
+      "effort_count": "13",
       "effort_counts": {
-        "overall": "14 efforts",
+        "overall": "13 efforts",
         "female": "5 efforts"
       },
       "destination": "strava://segments/4392934/local_legend?categories%5B%5D=overall"
@@ -5202,10 +5418,10 @@
       "athlete_id": 2617122,
       "title": "Ian MTB",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/2617122/12862406/1/large.jpg",
-      "effort_description": "11 efforts in the last 90 days",
-      "effort_count": "11",
+      "effort_description": "10 efforts in the last 90 days",
+      "effort_count": "10",
       "effort_counts": {
-        "overall": "11 efforts",
+        "overall": "10 efforts",
         "female": "2 efforts"
       },
       "destination": "strava://segments/6688055/local_legend?categories%5B%5D=overall"
@@ -5465,7 +5681,7 @@
       "polyline": "ct`mItrzNs@}@USm@w@cBiBmByBoEqEaA_Aq@y@]m@IYScASsBk@qIGmAGsDEc@EQGKIEWHUNc@RuDdAk@FSCMEEE_@m@e@kBi@cBmAoDOk@uAwDiA{ASc@W_@QOSG_@K{@MK?_@Fu@Tk@DYG_A[o@YW[IO[wACIc@c@QKYGsCGaASYUuAmBECg@Aa@G[[o@}@KIMAMD[Vq@v@QNQD[ASGk@WQOO_@Gk@E{AM_AAG]m@KIq@SsAUu@a@c@i@a@{@AIEeAA_AEUSGSLSPYJGCSMKKsAeCSSUCm@Tk@HcBDuCp@i@Hw@TS@MEME_@YW]Qa@OcACqBCa@Qe@MCi@`@q@t@KRc@~AKPYVgDbBmBt@oDlAk@HiAJy@BuBZ{@DoC@]CSGUMKMKSY_AU_AMWa@YYIuCUUGYAw@Pa@BOC]QGESYc@y@UQmBy@uA[i@]UISS]W_@SuCu@}@k@c@a@MSu@qBKQOKYIg@Cm@_@SUy@oAyBeCy@q@qA}@SSQWIUAYDc@PQdA[JINWDm@Ea@KYSUu@i@YQw@]OAU@]FiAb@]DyBIk@GeAGOBSN[Ze@RE?WAUIw@}@m@aASs@Ic@E}BBoBDq@@aCg@wICoCDyCJaBz@}Fb@cCR{A@u@OqAAc@?iAFuCAs@GoBQyBWqHMcC]{AY{@Ke@OcAm@oGGYk@wAo@mAe@i@YOuAWeAa@e@Iq@GOIc@c@g@_@kBu@gAo@m@MUCW@]IKMEUD_@NSJGnBShB[`@Kz@]lBeAdAQbAEf@Ih@S^c@r@uBVe@NQ~AsAHKHOJg@D{@",
       "resource_state": 3
     },
-    "effort_count": 25600,
+    "effort_count": 25602,
     "athlete_count": 8451,
     "star_count": 908,
     "athlete_segment_stats": {
@@ -5681,7 +5897,7 @@
       "polyline": "i{`iIrmgNZ_@b@y@V]|@{@h@o@NKN?PF^VvDlCpArAp@j@LFb@^NFZBZI\\Ux@kAhBiBx@s@v@c@rBw@XQnAgAlB{A`Ak@rAs@LEVM`@WHMjG_FxDiCh@i@h@a@`@Q~@Y`D_A~@S\\Ad@@zALZAnBJxJ\\p@AfCKhCe@lHaB|@UfB_@jBk@zBeAjA[hCMpB]h@MHE~@w@^KXAl@DhAEb@JLHHNJb@FnBTtBJZRRb@\\l@XJBbADb@HV?PD`@@t@K?M|BcBrAy@`DuAh@a@XWvBuCn@{AXa@p@y@fAgALCTU^Sd@_@PSHG^k@t@iA`@u@b@k@^q@r@y@Ze@FS\\c@f@eAJ]@MHONi@Tm@^m@\\]~BgBZ[PKb@Ov@E",
       "resource_state": 3
     },
-    "effort_count": 11683,
+    "effort_count": 11685,
     "athlete_count": 5190,
     "star_count": 9,
     "athlete_segment_stats": {
@@ -6138,10 +6354,10 @@
       "athlete_id": 7873291,
       "title": "Stephen Thompson",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/7873291/2570443/6/large.jpg",
-      "effort_description": "15 efforts in the last 90 days",
-      "effort_count": "15",
+      "effort_description": "14 efforts in the last 90 days",
+      "effort_count": "14",
       "effort_counts": {
-        "overall": "15 efforts",
+        "overall": "14 efforts",
         "female": "1 effort"
       },
       "destination": "strava://segments/6677446/local_legend?categories%5B%5D=overall"
@@ -6714,10 +6930,10 @@
       "athlete_id": 2885347,
       "title": "George Partridge",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/2885347/1374640/3/large.jpg",
-      "effort_description": "17 efforts in the last 90 days",
-      "effort_count": "17",
+      "effort_description": "16 efforts in the last 90 days",
+      "effort_count": "16",
       "effort_counts": {
-        "overall": "17 efforts",
+        "overall": "16 efforts",
         "female": "2 efforts"
       },
       "destination": "strava://segments/6665336/local_legend?categories%5B%5D=overall"
@@ -6761,7 +6977,7 @@
       "polyline": "ulu{Hh_lVpAC`AJTJL\\r@|EJ\\Vf@n@`A`@^xBx@XLVTHD^HhEKx@JfAd@r@h@rCjA\\\\l@v@r@fBz@~ApAxCb@pAt@jBd@bAbAnAb@TPFl@\\ZLz@d@bBjAz@z@PVp@`BXrAVxBN~BT~An@vBn@lB`AzBl@~@Z^r@p@ZR^LV?NETUP]X{@Li@H}@@kBBi@f@{FJq@^}A\\{@PYhA_B^a@d@o@v@m@~@[z@O`AG`@OLGZ_@xAmCVWVQLAVFNHnA|@d@TXDZ?n@ORKp@eATYZWlAs@TGl@IZAp@HL?REXMVY\\m@d@iBRk@R_@nAgBVc@jAuAXShBgBjAeAz@_@vBY~@@`ANLCLG\\i@d@qALg@XiBNk@Ts@lAsCn@aAb@e@Rk@XaARYz@a@LQNa@TqAVo@PKb@EFCDAVJL`@Ch@i@lDUlACbANtB?jABdCHp@Lh@Jv@M|CObAe@xAc@vCEtA@xAn@rC`@rAb@dAPVLLp@ZPT`A~Bl@t@LXDh@Gb@O^[^ORO`@UjAEh@?l@Fx@?zAT|CXxAd@rALfBR|@LVjAvAdA|A`@t@^jA\\xA\\fCVtAV`BVnAVjCHJD@DCDQDa@@sCCoC@UZyCTmADc@IsC]uEKcEQaCMo@C]@SLyAFc@V{@j@}@ZW`A]ROXg@d@iAj@w@x@s@vAy@lA_@nAs@VSdAeAPMNQx@k@r@[ZIp@I`@?h@JpBt@b@HnAFrAERBb@N^Pl@d@f@dAb@pA^dB\\nA",
       "resource_state": 3
     },
-    "effort_count": 31047,
+    "effort_count": 31048,
     "athlete_count": 11232,
     "star_count": 1203,
     "athlete_segment_stats": {
@@ -6905,7 +7121,7 @@
       "polyline": "s{g{Hv{rQVdCZnB`@dDXfBL`@t@dAL^b@tA`A|DJx@BxBNjBXhAd@fA`@f@LVL^RtAT|@DLNTPHV?FCFKLm@RgFB}HCy@DkAEgFDM`@ULJ^j@hArCXx@Lh@\\z@f@~@|@rBT`@HV^n@f@vA\\fAx@nB^lAl@|Az@rCn@vAx@nCZr@@^NdABdAXpC`@nBdA~Cr@|A`@dAVb@n@zA`A~Cv@vA`AtAlAz@bA\\\\Xn@v@f@\\\\^\\p@tAnB~@~AfAfAbApAl@`AX\\lAdAfAvBX`@b@f@tA`AT^Rp@LXbA|A`@f@p@`@p@R^Pd@d@rA|APNb@Xh@R`B@n@Fx@RZL~@j@PP`BhBhBvAf@Zd@P~AV~@T`AZb@R~DxBtCtAl@RbB^hAf@fAv@vC`B\\Xd@f@lBpCh@n@fB~C\\Zv@^VFtARxAP",
       "resource_state": 3
     },
-    "effort_count": 70141,
+    "effort_count": 70140,
     "athlete_count": 24322,
     "star_count": 199,
     "athlete_segment_stats": {
@@ -6930,10 +7146,10 @@
       "athlete_id": 2885347,
       "title": "George Partridge",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/2885347/1374640/3/large.jpg",
-      "effort_description": "22 efforts in the last 90 days",
-      "effort_count": "22",
+      "effort_description": "21 efforts in the last 90 days",
+      "effort_count": "21",
       "effort_counts": {
-        "overall": "22 efforts",
+        "overall": "21 efforts",
         "female": "3 efforts"
       },
       "destination": "strava://segments/12423239/local_legend?categories%5B%5D=overall"
@@ -7002,10 +7218,10 @@
       "athlete_id": 1126630,
       "title": "Peter H",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/1126630/13053676/1/large.jpg",
-      "effort_description": "10 efforts in the last 90 days",
-      "effort_count": "10",
+      "effort_description": "9 efforts in the last 90 days",
+      "effort_count": "9",
       "effort_counts": {
-        "overall": "10 efforts",
+        "overall": "9 efforts",
         "female": "2 efforts"
       },
       "destination": "strava://segments/6670960/local_legend?categories%5B%5D=overall"
@@ -7150,7 +7366,7 @@
       "effort_count": "2",
       "effort_counts": {
         "overall": "2 efforts",
-        "female": "1 effort"
+        "female": null
       },
       "destination": "strava://segments/6670867/local_legend?categories%5B%5D=overall"
     }
@@ -7265,7 +7481,7 @@
       "polyline": "ugevHrxdLOyEJwAV{B@e@EcA[_DEQkA_BY[EQAIFML@jAf@dALl@BPOBIAKEKe@?Oc@Mw@IkBCMEGG?EBMTK@KAy@q@w@i@eAeAQGI@HGf@Nl@LPIFIHWBg@MaB@Oa@}CGy@DgBb@eEp@gE~@qEfAwFh@oDTqDH_CBaCLqD",
       "resource_state": 3
     },
-    "effort_count": 24278,
+    "effort_count": 24277,
     "athlete_count": 4243,
     "star_count": 236,
     "athlete_segment_stats": {
@@ -7297,6 +7513,78 @@
         "female": "4 efforts"
       },
       "destination": "strava://segments/5810706/local_legend?categories%5B%5D=overall"
+    }
+  },
+  {
+    "id": 16290817,
+    "resource_state": 3,
+    "name": "Park Hill",
+    "activity_type": "Ride",
+    "distance": 1805.1,
+    "average_grade": 7.4,
+    "maximum_grade": 10.4,
+    "elevation_high": 248.9,
+    "elevation_low": 116.2,
+    "start_latlng": [
+      51.18497,
+      -2.27206
+    ],
+    "end_latlng": [
+      51.18985,
+      -2.24969
+    ],
+    "elevation_profile": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/SVJG5A52W3NUKCCN4S3BCUR7KTHP5TX3AQKNPLEI7D4QV6VJMBMWE3DKD5XR6WST7OHZQHLVHZSPA5Y5G2OCWWQ=",
+    "elevation_profiles": {
+      "light_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/SVJG5A52W3NUKCCN4S3BCUR7KTHP5TX3AQKNPLEI7D4QV6VJMBMWE3DKD5XR6WST7OHZQHLVHZSPA5Y5G2OCWWQ=",
+      "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/CZ56FGCCVUAMZ3ZWLPZTWZZPNPJPETFN73MPANY6PYZU3KTVRZJJDU7EBCVWMQWGVINVRZK46EEDNUT2J5RUJCQ="
+    },
+    "climb_category": 1,
+    "city": null,
+    "state": null,
+    "country": null,
+    "private": false,
+    "hazardous": false,
+    "starred": false,
+    "created_at": "2017-10-17T13:58:20Z",
+    "updated_at": "2024-09-17T20:16:46Z",
+    "total_elevation_gain": 132.7,
+    "map": {
+      "id": "s16290817",
+      "polyline": "aalwHlwzLuAwTe@eJDgEE{BScFAyF\\mLLgAT{@^q@l@eBHmAKcAc@wAuEyHmDcLyAkDmAmBqDmI_DoD[y@MuA",
+      "resource_state": 3
+    },
+    "effort_count": 15773,
+    "athlete_count": 3222,
+    "star_count": 268,
+    "athlete_segment_stats": {
+      "pr_elapsed_time": null,
+      "pr_date": null,
+      "pr_visibility": null,
+      "pr_activity_id": null,
+      "pr_activity_visibility": null,
+      "effort_count": 0
+    },
+    "xoms": {
+      "kom": "4:06",
+      "qom": "5:54",
+      "overall": "4:06",
+      "destination": {
+        "href": "strava://segments/16290817/leaderboard",
+        "type": "overall",
+        "name": "All-Time"
+      }
+    },
+    "local_legend": {
+      "athlete_id": 8324206,
+      "title": "Gary Kelly",
+      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/8324206/5626553/2/large.jpg",
+      "effort_description": "18 efforts in the last 90 days",
+      "effort_count": "18",
+      "effort_counts": {
+        "overall": "18 efforts",
+        "female": "16 efforts"
+      },
+      "destination": "strava://segments/16290817/local_legend?categories%5B%5D=overall"
     }
   },
   {
@@ -7362,10 +7650,10 @@
       "athlete_id": 6241040,
       "title": "Mike Wheatley",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/6241040/17329570/1/large.jpg",
-      "effort_description": "33 efforts in the last 90 days",
-      "effort_count": "33",
+      "effort_description": "32 efforts in the last 90 days",
+      "effort_count": "32",
       "effort_counts": {
-        "overall": "33 efforts",
+        "overall": "32 efforts",
         "female": "6 efforts"
       },
       "destination": "strava://segments/667813/local_legend?categories%5B%5D=overall"
@@ -7553,7 +7841,7 @@
       "polyline": "c|mxH`ceMKDo@Yu@g@mAsAi@[SDYh@Eb@@~ANlATj@`@lB~@~HJpBAj@UfAIdAAd@Dl@PbAH|@?p@Fp@N`AGpAMr@_ArCgC`E{CtF_AjAw@^c@b@}DzF",
       "resource_state": 3
     },
-    "effort_count": 13139,
+    "effort_count": 13140,
     "athlete_count": 2448,
     "star_count": 275,
     "athlete_segment_stats": {
@@ -7791,9 +8079,9 @@
       }
     },
     "local_legend": {
-      "athlete_id": 4505945,
-      "title": "Martin Twaites (Watford Velo)",
-      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/4505945/1433559/4/large.jpg",
+      "athlete_id": 16069025,
+      "title": "puɐɥS ʇɹǝqoɹ 🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/16069025/4884773/14/large.jpg",
       "effort_description": "1 effort in the last 90 days",
       "effort_count": "1",
       "effort_counts": {
@@ -7985,7 +8273,7 @@
       "polyline": "__}vH_w`@v@nC\\x@Tb@b@p@l@r@XXf@ZjAf@h@Nx@HzAH`ALr@N`DjAvF`Bv@\\h@^bAbAtDjEvDzDnAvAnAbBt@vApAfB|BlCbArAvDzDx@t@|AnA`An@lBbAp@f@t@z@bB`CRVh@d@TL~FrB\\PZRn@n@lAdBrClDf@t@d@bBt@hBn@hAh@r@d@~@\\hAVzAVhA^nBpA~E`AhDZ|@r@`BrErJd@pALj@NjAD|ACzAMvBEzA?l@Bj@Fj@~ArJ`AfFj@`Cx@zBXh@`@f@n@l@p@h@tC|AbHjDv@b@~AjA~CpC`DdDn@v@fBnCf@j@RLJHpA`@bAPh@DnCj@~@\\~Bl@zC`AnAh@t@l@TZh@|@Tf@^dAh@fBz@rDnFvVn@bF~@vJ\\nCt@`Ed@zAb@x@lAtA|A|Ab@h@bExGnBhDdChEhAzBfAxClA`E`@|AlAbExCnJdArCdAbC|@dBt@nAbBzBx@z@`@\\fEjCpH|Et@t@nChE",
       "resource_state": 3
     },
-    "effort_count": 37501,
+    "effort_count": 37500,
     "athlete_count": 7199,
     "star_count": 609,
     "athlete_segment_stats": {
@@ -8010,10 +8298,10 @@
       "athlete_id": 433443,
       "title": "Kevin Robins",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/433443/678436/2/large.jpg",
-      "effort_description": "10 efforts in the last 90 days",
-      "effort_count": "10",
+      "effort_description": "9 efforts in the last 90 days",
+      "effort_count": "9",
       "effort_counts": {
-        "overall": "10 efforts",
+        "overall": "9 efforts",
         "female": "2 efforts"
       },
       "destination": "strava://segments/16290971/local_legend?categories%5B%5D=overall"
@@ -8190,7 +8478,7 @@
       "polyline": "ywrwHzraAlCy@fCi@nAQL@b@TrDhEt@v@fAx@fA\\hAVlBRp@LbB^L?h@?rCQjEA|AG`@@b@Pn@r@n@fAdA~AVX|@t@hFpFbB`B`ClChHzHlAd@dEz@d@?d@CrBe@fFcDhA{@|BqAh@k@`A_ArBaB\\S\\OjASlFs@lE_@l@KzAc@pFa@N@|@`@bG~Dh@R",
       "resource_state": 3
     },
-    "effort_count": 135238,
+    "effort_count": 135244,
     "athlete_count": 26633,
     "star_count": 2885,
     "athlete_segment_stats": {
@@ -8622,7 +8910,7 @@
       "polyline": "ghysHrhlF_FoLeCwIUWKDg@xAKDS?mBsCsEf@uAiA}@g@]]Wk@SgBcBuRUwBkAaGW{EAwAIsBCeDSoDa@kDMYs@i@QY",
       "resource_state": 3
     },
-    "effort_count": 8081,
+    "effort_count": 8082,
     "athlete_count": 1991,
     "star_count": 261,
     "athlete_segment_stats": {
@@ -8719,10 +9007,10 @@
       "athlete_id": 6322196,
       "title": "Tim Tweedy",
       "profile": "https://graph.facebook.com/100001108633280/picture?height=256&width=256",
-      "effort_description": "17 efforts in the last 90 days",
-      "effort_count": "17",
+      "effort_description": "16 efforts in the last 90 days",
+      "effort_count": "16",
       "effort_counts": {
-        "overall": "17 efforts",
+        "overall": "16 efforts",
         "female": "3 efforts"
       },
       "destination": "strava://segments/16298353/local_legend?categories%5B%5D=overall"
@@ -8791,10 +9079,10 @@
       "athlete_id": 16156356,
       "title": "Bryce Pegg",
       "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/16156356/4520198/19/large.jpg",
-      "effort_description": "35 efforts in the last 90 days",
-      "effort_count": "35",
+      "effort_description": "34 efforts in the last 90 days",
+      "effort_count": "34",
       "effort_counts": {
-        "overall": "35 efforts",
+        "overall": "34 efforts",
         "female": "4 efforts"
       },
       "destination": "strava://segments/16298393/local_legend?categories%5B%5D=overall"
@@ -8838,7 +9126,7 @@
       "polyline": "iutdIrsdJVF`@AdFX|Ir@xA@^GPKNOzGqN|D{GLYx@kCJy@BgAPiB?aAPmBU_N?k@Ba@d@oClAuDHe@Js@F}@JgCH}CFy@x@cBNg@@qALeAJ]BK\\i@x@g@HIv@oA~@cAj@Wt@KLKRi@?o@e@{AAc@De@NILC`AEP@NHdB~APFr@E",
       "resource_state": 3
     },
-    "effort_count": 93216,
+    "effort_count": 93224,
     "athlete_count": 24598,
     "star_count": 2117,
     "athlete_segment_stats": {
@@ -9054,7 +9342,7 @@
       "polyline": "mz_dI|ayJzDfFr@jAtBrCj@l@hAx@fAb@nAX|AXrDErAF^JbBn@`FbCtDPnBXf@AtAYL?|@Hv@^PLt@`A\\x@~@|Cr@hDl@rBz@dBbAhA`@XVLXFbDP|I\\~BBbGKpAYzDyBxAk@XCdAAhDFpBL~BTdAVz@\\vD|Bx@p@p@l@z@`AvDtFp@v@vClClC|Bb@ZjB|@hAZ^DbDD~@A^@vAPfCr@xDtAvCtA",
       "resource_state": 3
     },
-    "effort_count": 7661,
+    "effort_count": 7663,
     "athlete_count": 3036,
     "star_count": 325,
     "athlete_segment_stats": {
@@ -9270,7 +9558,7 @@
       "polyline": "}_p`I`nnNZ}APwBXmFh@oC`BqFf@gApBeC`CqAh@KpC`ArAv@jAZdBRlBfA`CfA|ExA`AMnAmAzBcApAQbB`@vAn@nAx@n@J|AiB~A{@nAcAvAa@f@J",
       "resource_state": 3
     },
-    "effort_count": 18459,
+    "effort_count": 18458,
     "athlete_count": 6010,
     "star_count": 383,
     "athlete_segment_stats": {
