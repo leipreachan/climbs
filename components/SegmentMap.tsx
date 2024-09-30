@@ -1,15 +1,17 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 
-export default function SegmentMap({ segments, selectedSegments, userSegments }) {
+export default function SegmentMap({ segments, selectedSegments, userSegments, focusedSegment }) {
   const mapContainer = useRef(null)
   const map = useRef(null)
   const popupRef = useRef(new mapboxgl.Popup({ offset: 15 }))
+
+  const segmentDefaultColor = "#FF8800";
 
   useEffect(() => {
     if (map.current) return // initialize map only once
@@ -17,7 +19,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments })
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [segments[0].start_latlng[1], segments[0].start_latlng[0]],
+      center: segments.length > 0 ? [segments[0].start_latlng[1], segments[0].start_latlng[0]] : [0, 0],
       zoom: 9
     })
 
@@ -47,7 +49,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments })
             'line-cap': 'round'
           },
           'paint': {
-            'line-color': '#FF6600',
+            'line-color': segmentDefaultColor,
             'line-width': 4
           }
         })
@@ -88,7 +90,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments })
 
     segments.forEach((segment) => {
       if (map.current.getLayer(`segment-${segment.id}`)) {
-        let color = '#888' // default color
+        let color = segmentDefaultColor // default color
 
         if (selectedSegments[segment.id]) {
           color = '#FFA500' // orange for selected segments
@@ -102,6 +104,42 @@ export default function SegmentMap({ segments, selectedSegments, userSegments })
       }
     })
   }, [segments, selectedSegments, userSegments])
+
+  useEffect(() => {
+    if (!map.current || !focusedSegment) return
+
+    const coordinates = decodePolyline(focusedSegment.map.polyline)
+    const bounds = coordinates.reduce((bounds, coord) => {
+      return bounds.extend([coord[1], coord[0]])
+    }, new mapboxgl.LngLatBounds([coordinates[0][1], coordinates[0][0]], [coordinates[0][1], coordinates[0][0]]))
+
+    map.current.fitBounds(bounds, {
+      padding: 50,
+      duration: 1000
+    })
+
+    // Highlight the focused segment
+    map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-color', '#FF0000')
+    map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-width', 6)
+
+    // Show popup for the focused segment
+    const popupContent = createPopupHTML(focusedSegment)
+    const popupCoordinates = coordinates[Math.floor(coordinates.length / 2)]
+    
+    popupRef.current
+      .setLngLat([popupCoordinates[1], popupCoordinates[0]])
+      .setHTML(popupContent)
+      .addTo(map.current)
+
+    // Clean up function to reset the segment style when focus changes
+    return () => {
+      if (map.current.getLayer(`segment-${focusedSegment.id}`)) {
+        map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-color', segmentDefaultColor)
+        map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-width', 4)
+      }
+      popupRef.current.remove()
+    }
+  }, [focusedSegment])
 
   return (
     <div ref={mapContainer} className="h-full" />
@@ -122,7 +160,6 @@ function createPopupHTML(segment) {
   `
 }
 
-// Helper function to decode polyline
 function decodePolyline(str, precision = 5) {
   let index = 0,
       lat = 0,

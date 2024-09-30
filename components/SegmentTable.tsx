@@ -1,6 +1,3 @@
-'use client'
-
-import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
@@ -12,21 +9,15 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
-export default function SegmentTable({ segments }) {
-  const [selectedSegments, setSelectedSegments] = useState({})
-  const [userSegments, setUserSegments] = useState({})
-
-  const handleCheckSegment = (segmentId) => {
-    setSelectedSegments(prev => ({
-      ...prev,
-      [segmentId]: !prev[segmentId]
-    }))
-  }
-
-  const checkUserResults = async () => {
-    // Simulate API call to get user segments
-    const userSegmentsData = await fetch('/api/user-segments').then(res => res.json())
-    setUserSegments(userSegmentsData)
+export default function SegmentTable({ 
+  segments, 
+  selectedSegments, 
+  onSegmentCheck, 
+  onSegmentFocus, 
+  onCheckUserResults 
+}) {
+  if (segments.length === 0) {
+    return <div>No segments available.</div>
   }
 
   return (
@@ -47,10 +38,17 @@ export default function SegmentTable({ segments }) {
               <TableCell>
                 <Checkbox
                   checked={selectedSegments[segment.id] || false}
-                  onChange={() => handleCheckSegment(segment.id)}
+                  onCheckedChange={() => onSegmentCheck(segment.id)}
                 />
               </TableCell>
-              <TableCell>{segment.name}</TableCell>
+              <TableCell>
+                <span
+                  onClick={() => onSegmentFocus(segment)}
+                  className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 cursor-pointer"
+                >
+                  {segment.name}
+                </span>
+              </TableCell>
               <TableCell>{segment.distance.toFixed(1)}</TableCell>
               <TableCell>{segment.average_grade.toFixed(1)}</TableCell>
               <TableCell>{segment.maximum_grade.toFixed(1)}</TableCell>
@@ -58,7 +56,7 @@ export default function SegmentTable({ segments }) {
           ))}
         </TableBody>
       </Table>
-      <Button onClick={checkUserResults} className="mt-4">
+      <Button onClick={onCheckUserResults} className="mt-4">
         Check my results
       </Button>
     </div>
