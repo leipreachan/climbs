@@ -5,6 +5,7 @@ import { useSession, signIn } from "next-auth/react"
 import SegmentTable from '@/components/SegmentTable'
 import SegmentMap from '@/components/SegmentMap'
 import { Button } from '@/components/ui/button'
+import { env } from 'process'
 
 interface Segment {
   id: number
@@ -123,11 +124,7 @@ export default function Home() {
         </div>
       </div>
       {!session && (
-        <Button onClick={() => signIn(
-          "strava", {
-            callbackUrl: process.env.NEXT_PUBLIC_AUTH_DOMAIN
-          }
-        )} variant="ghost" className="stravaConnect" />
+        <Button onClick={() => signIn("strava")} variant="ghost" className="stravaConnect" />
       ) || (
         <Button onClick={checkUserResults} className="mt-4" disabled={isUserDataLoading}>
         {(isUserDataLoading && ("Loading your data... (it may take a while...)") || ("Check my Strava results"))}
