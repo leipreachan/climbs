@@ -28,6 +28,7 @@ export default function Home() {
   const [focusedSegment, setFocusedSegment] = useState<Segment | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isUserDataLoading, setUserDataLoading] = useState(false)
 
   useEffect(() => {
     async function fetchSegments() {
@@ -70,6 +71,7 @@ export default function Home() {
       return
     }
 
+    setUserDataLoading(true);
     try {
       const response = await fetch('/api/user-segments')
       if (!response.ok) {
@@ -81,6 +83,7 @@ export default function Home() {
       console.error('Error fetching user segments:', err)
       setError('Failed to fetch user segments. Please try again.')
     }
+    setUserDataLoading(false);
   }
 
   if (isLoading) {
@@ -122,8 +125,8 @@ export default function Home() {
       {!session && (
         <Button onClick={() => signIn("strava")} variant="ghost" className="stravaConnect" />
       ) || (
-        <Button onClick={checkUserResults} className="mt-4">
-        Check my results
+        <Button onClick={checkUserResults} className="mt-4" disabled={isUserDataLoading}>
+        {(isUserDataLoading && ("Loading your data... (it may take a while...)") || ("Check my Strava results"))}
       </Button>
       )}
     </main>

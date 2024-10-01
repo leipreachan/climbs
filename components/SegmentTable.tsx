@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
   Collapsible,
@@ -29,7 +28,7 @@ interface Segment {
 interface SegmentTableProps {
   segments: Segment[]
   selectedSegments: Record<number, boolean>
-  userSegments: Record<number, { effort_count: number }>
+  userSegments: Record<number, { effort_count: number, pr_elapsed_time: number }>
   onSegmentCheck: (segmentId: number) => void
   onSegmentFocus: (segment: Segment) => void
 }
@@ -51,14 +50,14 @@ export default function SegmentTable({
       header: ({ table }) => (
         <Checkbox
           checked={table.getIsAllPageRowsSelected()}
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+          onChange={(value) => table.toggleAllPageRowsSelected(!!value)}
           aria-label="Select all"
         />
       ),
       cell: ({ row }) => (
         <Checkbox
           checked={selectedSegments[row.original.id] || false}
-          onCheckedChange={() => onSegmentCheck(row.original.id)}
+          onChange={() => onSegmentCheck(row.original.id)}
           aria-label="Select row"
         />
       ),
@@ -77,7 +76,9 @@ export default function SegmentTable({
             {row.original.name}
           </button>
           {userSegments[row.original.id]?.effort_count > 0 && (
-            <CheckCircle className="h-4 w-4 text-green-500" />
+            <>
+              <CheckCircle className="h-4 w-4 text-green-500" />&nbsp;{userSegments[row.original.id]?.effort_count}
+            </>
           )}
         </div>
       ),
@@ -117,6 +118,27 @@ export default function SegmentTable({
     return <div>No segments available.</div>
   }
 
+  const calcNumberOfCheckedSegmentsPerRegion = (segments, userSegments) => {
+    const segmentsObj = segments.reduce((acc, segment) => {
+      acc[segment.id] = segment;
+      return acc;
+    }, {});
+    const regionsData = {};
+    for (let segId of Object.keys(userSegments)) {
+      if (userSegments[segId].effort_count > 0 && segmentsObj[segId] != undefined) {
+        if (regionsData[segmentsObj[segId].region] == undefined) {
+          regionsData[segmentsObj[segId].region] = 0;
+        }
+        regionsData[segmentsObj[segId].region]++;
+      }
+    }
+    return regionsData;
+  }
+
+  const regionsData = calcNumberOfCheckedSegmentsPerRegion(segments, userSegments);
+
+  
+  console.log(regionsData);
   return (
     <div className="w-full space-y-4">
       <Input
@@ -131,32 +153,38 @@ export default function SegmentTable({
       />
       {Object.entries(segmentsByRegion).map(([region, regionSegments]) => (
         <div key={region} className='shadow-lg rounded-lg border'>
-        <Collapsible
-          key={region}
-          open={openSections[region]}
-          onOpenChange={() => toggleSection(region)}
-        >
-          <CollapsibleTrigger asChild>
-          <div className="flex items-left cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
-              {openSections[region] ? (
-                <ChevronDown className="mr-2 h-4 w-4" />
-              ) : (
-                <ChevronRight className="mr-2 h-4 w-4" />
-              )}
-              {region} ({regionSegments.length} segment{regionSegments.length>1 && "s" || ""})
-            </div>
-          </CollapsibleTrigger>
-          <CollapsibleContent>
-            <DataTable
-              columns={columns}
-              data={regionSegments}
-              sorting={sorting}
-              onSortingChange={setSorting}
-              columnFilters={columnFilters}
-              onColumnFiltersChange={setColumnFilters}
-            />
-          </CollapsibleContent>
-        </Collapsible>
+          <Collapsible
+            key={region}
+            open={openSections[region]}
+            onOpenChange={() => toggleSection(region)}
+          >
+            <CollapsibleTrigger asChild>
+              <div className="flex items-left cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+                {openSections[region] ? (
+                  <ChevronDown className="mr-2 h-4 w-4" />
+                ) : (
+                  <ChevronRight className="mr-2 h-4 w-4" />
+                )}
+                {region}
+                &nbsp;(
+                {
+                  Object.entries(userSegments).length ? ((regionsData[region] ? regionsData[region] : 0 ) + " of " + regionSegments.length + " done")
+                    : (regionSegments.length + " segment" + (regionSegments.length > 1 && "s" || ""))
+                }
+                )
+              </div>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <DataTable
+                columns={columns}
+                data={regionSegments}
+                sorting={sorting}
+                onSortingChange={setSorting}
+                columnFilters={columnFilters}
+                onColumnFiltersChange={setColumnFilters}
+              />
+            </CollapsibleContent>
+          </Collapsible>
         </div>
       ))}
     </div>

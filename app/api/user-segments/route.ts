@@ -10,6 +10,8 @@ export async function GET() {
   }
 
   const segments = require('@/data/segments.json')
+  // const reply = require('@/data/userSegments.json');
+  // return NextResponse.json(reply);
   const userSegments: Record<number, { effort_count: number, pr_elapsed_time: number, pr_date: string }> = {}
 
   for (const segment of segments) {
