@@ -80,6 +80,7 @@ export default function SegmentTable({
               <CheckCircle className="h-4 w-4 text-green-500" />&nbsp;{userSegments[row.original.id]?.effort_count}
             </>
           )}
+          [<a href={"https://strava.com/segments/" + row.original.id} target="_blank" title="Link to original segment">↗️</a>]
         </div>
       ),
     },
@@ -137,8 +138,6 @@ export default function SegmentTable({
 
   const regionsData = calcNumberOfCheckedSegmentsPerRegion(segments, userSegments);
 
-  
-  console.log(regionsData);
   return (
     <div className="w-full space-y-4">
       <Input
@@ -168,7 +167,7 @@ export default function SegmentTable({
                 {region}
                 &nbsp;(
                 {
-                  Object.entries(userSegments).length ? ((regionsData[region] ? regionsData[region] : 0 ) + " of " + regionSegments.length + " done")
+                  Object.entries(userSegments).length ? ((regionsData[region] ? regionsData[region] : 0) + " of " + regionSegments.length + " done")
                     : (regionSegments.length + " segment" + (regionSegments.length > 1 && "s" || ""))
                 }
                 )
