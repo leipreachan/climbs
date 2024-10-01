@@ -24,7 +24,7 @@ export default function SegmentTable({
     <div>
       <Table class="text-left w-full">
         <TableHeader class="bg-slate-300 flex w-full">
-          <TableRow class="flex w-full mb-4">
+          <TableRow class="flex w-full">
             <TableHead class="p-4 w-2/12">Select</TableHead>
             <TableHead class="p-4 w-6/12">Name</TableHead>
             <TableHead class="p-4 w-4/12">Length</TableHead>

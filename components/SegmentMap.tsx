@@ -3,21 +3,44 @@
 import { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import SegmentPopup from './SegmentPopup'
+import ReactDOMServer from 'react-dom/server'
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
 
-export default function SegmentMap({ segments, selectedSegments, userSegments, focusedSegment }) {
-  const mapContainer = useRef(null)
-  const map = useRef(null)
-  const popupRef = useRef(new mapboxgl.Popup({ offset: 15 }))
+interface Segment {
+  id: number
+  name: string
+  distance: number
+  average_grade: number
+  maximum_grade: number
+  total_elevation_gain: number
+  city: string
+  country: string
+  start_latlng: [number, number]
+  map: {
+    polyline: string
+  }
+}
 
+interface SegmentMapProps {
+  segments: Segment[]
+  selectedSegments: Record<number, boolean>
+  userSegments: Record<number, { effort_count: number }>
+  focusedSegment: Segment | null
+}
+
+export default function SegmentMap({ segments, selectedSegments, userSegments, focusedSegment }: SegmentMapProps) {
+  const mapContainer = useRef<HTMLDivElement>(null)
+  const map = useRef<mapboxgl.Map | null>(null)
+  const popupRef = useRef(new mapboxgl.Popup({ offset: 15 }))
   const segmentDefaultColor = "#FF8800";
 
   useEffect(() => {
     if (map.current) return // initialize map only once
 
     map.current = new mapboxgl.Map({
-      container: mapContainer.current,
+      container: mapContainer.current!,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: segments.length > 0 ? [segments[0].start_latlng[1], segments[0].start_latlng[0]] : [0, 0],
       zoom: 9
@@ -25,13 +48,13 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
 
     map.current.on('load', () => {
       segments.forEach((segment) => {
-        map.current.addSource(`segment-${segment.id}`, {
+        map.current!.addSource(`segment-${segment.id}`, {
           'type': 'geojson',
           'data': {
             'type': 'Feature',
             'properties': {
               ...segment,
-              description: createPopupHTML(segment)
+              description: ReactDOMServer.renderToString(<SegmentPopup segment={segment} />)
             },
             'geometry': {
               'type': 'LineString',
@@ -40,7 +63,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
           }
         })
 
-        map.current.addLayer({
+        map.current!.addLayer({
           'id': `segment-${segment.id}`,
           'type': 'line',
           'source': `segment-${segment.id}`,
@@ -55,17 +78,17 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
         })
 
         // Change cursor to pointer when hovering over a segment
-        map.current.on('mouseenter', `segment-${segment.id}`, () => {
-          map.current.getCanvas().style.cursor = 'pointer'
+        map.current!.on('mouseenter', `segment-${segment.id}`, () => {
+          map.current!.getCanvas().style.cursor = 'pointer'
         })
 
         // Change cursor back when leaving a segment
-        map.current.on('mouseleave', `segment-${segment.id}`, () => {
-          map.current.getCanvas().style.cursor = ''
+        map.current!.on('mouseleave', `segment-${segment.id}`, () => {
+          map.current!.getCanvas().style.cursor = ''
         })
 
         // Show popup on hover
-        map.current.on('mousemove', `segment-${segment.id}`, (e) => {
+        map.current!.on('mousemove', `segment-${segment.id}`, (e) => {
           if (e.features.length > 0) {
             const coordinates = e.lngLat
             const description = e.features[0].properties.description
@@ -73,12 +96,12 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
             popupRef.current
               .setLngLat(coordinates)
               .setHTML(description)
-              .addTo(map.current)
+              .addTo(map.current!)
           }
         })
 
         // Hide popup when leaving a segment
-        map.current.on('mouseleave', `segment-${segment.id}`, () => {
+        map.current!.on('mouseleave', `segment-${segment.id}`, () => {
           popupRef.current.remove()
         })
       })
@@ -89,7 +112,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
     if (!map.current) return
 
     segments.forEach((segment) => {
-      if (map.current.getLayer(`segment-${segment.id}`)) {
+      if (map.current!.getLayer(`segment-${segment.id}`)) {
         let color = segmentDefaultColor // default color
 
         if (selectedSegments[segment.id]) {
@@ -100,7 +123,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
           color = '#4CAF50' // green for completed segments
         }
 
-        map.current.setPaintProperty(`segment-${segment.id}`, 'line-color', color)
+        map.current!.setPaintProperty(`segment-${segment.id}`, 'line-color', color)
       }
     })
   }, [segments, selectedSegments, userSegments])
@@ -114,7 +137,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
     }, new mapboxgl.LngLatBounds([coordinates[0][1], coordinates[0][0]], [coordinates[0][1], coordinates[0][0]]))
 
     map.current.fitBounds(bounds, {
-      padding: 50,
+      padding: 150,
       duration: 1000
     })
 
@@ -123,7 +146,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
     map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-width', 6)
 
     // Show popup for the focused segment
-    const popupContent = createPopupHTML(focusedSegment)
+    const popupContent = ReactDOMServer.renderToString(<SegmentPopup segment={focusedSegment} />)
     const popupCoordinates = coordinates[Math.floor(coordinates.length / 2)]
     
     popupRef.current
@@ -133,9 +156,9 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
 
     // Clean up function to reset the segment style when focus changes
     return () => {
-      if (map.current.getLayer(`segment-${focusedSegment.id}`)) {
-        map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-color', segmentDefaultColor)
-        map.current.setPaintProperty(`segment-${focusedSegment.id}`, 'line-width', 4)
+      if (map.current!.getLayer(`segment-${focusedSegment.id}`)) {
+        map.current!.setPaintProperty(`segment-${focusedSegment.id}`, 'line-color', '#888')
+        map.current!.setPaintProperty(`segment-${focusedSegment.id}`, 'line-width', 4)
       }
       popupRef.current.remove()
     }
@@ -146,24 +169,7 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
   )
 }
 
-function cleanCityName(city) {
-  return city.replace('UK', '').replace(/,\s+?$/, '').trim();
-}
-
-function createPopupHTML(segment) {
-  return `
-    <div class="p-2 max-w-sm">
-      <h3 class="text-lg font-bold mb-2">${segment.name}</h3>
-      <p class="text-sm mb-1"><strong>Length:</strong> ${segment.distance.toFixed(1)} m</p>
-      <p class="text-sm mb-1"><strong>Avg Grade:</strong> ${segment.average_grade.toFixed(1)}%</p>
-      <p class="text-sm mb-1"><strong>Max Grade:</strong> ${segment.maximum_grade.toFixed(1)}%</p>
-      <p class="text-sm mb-1"><strong>Elevation Gain:</strong> ${segment.total_elevation_gain.toFixed(1)} m</p>
-      <p class="text-sm mb-1"><strong>Location:</strong> ${[cleanCityName(segment.city || ''), segment.country].join(', ')}</p>
-    </div>
-  `
-}
-
-function decodePolyline(str, precision = 5) {
+function decodePolyline(str: string, precision = 5) {
   let index = 0,
       lat = 0,
       lng = 0,
