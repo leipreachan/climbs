@@ -17,7 +17,7 @@ interface SegmentPopupProps {
     }
 }
 
-function cleanCityName(city) {
+function cleanCityName(city: string) {
     return city.replace('UK', '').replace(/,\s+?$/, '').trim();
 }
 

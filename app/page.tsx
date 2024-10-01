@@ -24,7 +24,7 @@ export default function Home() {
   const { data: session } = useSession()
   const [segments, setSegments] = useState<Segment[]>([])
   const [selectedSegments, setSelectedSegments] = useState<Record<number, boolean>>({})
-  const [userSegments, setUserSegments] = useState<Record<number, { effort_count: number }>>({})
+  const [userSegments, setUserSegments] = useState<Record<number, { effort_count: number, pr_elapsed_time: number }>>({})
   const [focusedSegment, setFocusedSegment] = useState<Segment | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

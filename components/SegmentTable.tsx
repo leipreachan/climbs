@@ -15,20 +15,18 @@ import {
 } from "@tanstack/react-table"
 import { DataTable } from '@/components/ui/data-table'
 import { Input } from '@/components/ui/input'
+import { Segment } from 'next/dist/server/app-render/types'
 
-interface Segment {
-  id: number
-  name: string
-  distance: number
-  average_grade: number
-  maximum_grade: number
-  region: string
+
+interface UserSegmentData {
+  effort_count: number,
+  pr_elapsed_time: number
 }
 
 interface SegmentTableProps {
   segments: Segment[]
   selectedSegments: Record<number, boolean>
-  userSegments: Record<number, { effort_count: number, pr_elapsed_time: number }>
+  userSegments: Record<number, UserSegmentData>
   onSegmentCheck: (segmentId: number) => void
   onSegmentFocus: (segment: Segment) => void
 }
@@ -101,7 +99,7 @@ export default function SegmentTable({
     },
   ]
 
-  const segmentsByRegion = useMemo(() => {
+  const segmentsByRegion: Record<string, Segment[]> = useMemo(() => {
     return segments.reduce((acc, segment) => {
       if (!acc[segment.region]) {
         acc[segment.region] = []
@@ -119,18 +117,20 @@ export default function SegmentTable({
     return <div>No segments available.</div>
   }
 
-  const calcNumberOfCheckedSegmentsPerRegion = (segments, userSegments) => {
-    const segmentsObj = segments.reduce((acc, segment) => {
+  const calcNumberOfCheckedSegmentsPerRegion = (segments: Segment[], userSegments: Record<number, UserSegmentData>) => {
+    const segmentsObj: Record<string, Segment> = segments.reduce((acc, segment) => {
       acc[segment.id] = segment;
       return acc;
     }, {});
-    const regionsData = {};
-    for (let segId of Object.keys(userSegments)) {
-      if (userSegments[segId].effort_count > 0 && segmentsObj[segId] != undefined) {
-        if (regionsData[segmentsObj[segId].region] == undefined) {
-          regionsData[segmentsObj[segId].region] = 0;
+    const regionsData: Record<string, number> = {};
+    const keys: string[] = Object.keys(userSegments);
+    for (const segId of keys) {
+      if (userSegments[Number.parseInt(segId)].effort_count > 0 && segmentsObj[segId] != undefined) {
+        const reg: string = segmentsObj[segId].region
+        if (regionsData[reg] == undefined) {
+          regionsData[reg] = 0;
         }
-        regionsData[segmentsObj[segId].region]++;
+        regionsData[reg]++;
       }
     }
     return regionsData;

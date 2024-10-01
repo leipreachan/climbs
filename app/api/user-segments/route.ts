@@ -1,6 +1,8 @@
 import { getServerSession } from "next-auth/next"
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import { authOptions } from "../auth/[...nextauth]/options"
 import { NextResponse } from 'next/server'
+import fs from 'fs/promises'
+import path from 'path'
 
 export async function GET() {
   const session = await getServerSession(authOptions)
@@ -9,7 +11,9 @@ export async function GET() {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 })
   }
 
-  const segments = require('@/data/segments.json')
+  const filePath = path.join(process.cwd(), 'data', 'segments.json')
+  const jsonData = await fs.readFile(filePath, 'utf8')
+  const segments = JSON.parse(jsonData)
   // const reply = require('@/data/userSegments.json');
   // return NextResponse.json(reply);
   const userSegments: Record<number, { effort_count: number, pr_elapsed_time: number, pr_date: string }> = {}

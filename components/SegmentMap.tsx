@@ -5,23 +5,9 @@ import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import SegmentPopup from './SegmentPopup'
 import ReactDOMServer from 'react-dom/server'
+import { Segment } from 'next/dist/server/app-render/types'
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
-
-interface Segment {
-  id: number
-  name: string
-  distance: number
-  average_grade: number
-  maximum_grade: number
-  total_elevation_gain: number
-  city: string
-  country: string
-  start_latlng: [number, number]
-  map: {
-    polyline: string
-  }
-}
 
 interface SegmentMapProps {
   segments: Segment[]
@@ -89,13 +75,12 @@ export default function SegmentMap({ segments, selectedSegments, userSegments, f
 
         // Show popup on hover
         map.current!.on('mousemove', `segment-${segment.id}`, (e) => {
-          if (e.features.length > 0) {
+          if (e.features != undefined && e.features.length > 0) {
             const coordinates = e.lngLat
-            const description = e.features[0].properties.description
 
             popupRef.current
               .setLngLat(coordinates)
-              .setHTML(description)
+              .setHTML(e.features[0].properties!.description || '')
               .addTo(map.current!)
           }
         })
@@ -173,12 +158,13 @@ function decodePolyline(str: string, precision = 5) {
   let index = 0,
       lat = 0,
       lng = 0,
-      coordinates = [],
       shift = 0,
       result = 0,
       byte = null,
       latitude_change,
-      longitude_change,
+      longitude_change
+  const
+      coordinates = [],
       factor = Math.pow(10, precision || 5)
 
   while (index < str.length) {
