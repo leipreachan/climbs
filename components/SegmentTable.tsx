@@ -3,23 +3,16 @@
 import { useState, useMemo } from 'react'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
-
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
-import { ChevronDown, ChevronRight } from 'lucide-react'
+import { ChevronDown, ChevronRight, CheckCircle } from 'lucide-react'
 import {
   ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-  getSortedRowModel,
   SortingState,
   ColumnFiltersState,
-  getFilteredRowModel,
-  getPaginationRowModel,
 } from "@tanstack/react-table"
 import { DataTable } from '@/components/ui/data-table'
 import { Input } from '@/components/ui/input'
@@ -36,6 +29,7 @@ interface Segment {
 interface SegmentTableProps {
   segments: Segment[]
   selectedSegments: Record<number, boolean>
+  userSegments: Record<number, { effort_count: number }>
   onSegmentCheck: (segmentId: number) => void
   onSegmentFocus: (segment: Segment) => void
   onCheckUserResults: () => void
@@ -44,6 +38,7 @@ interface SegmentTableProps {
 export default function SegmentTable({
   segments,
   selectedSegments,
+  userSegments,
   onSegmentCheck,
   onSegmentFocus,
   onCheckUserResults
@@ -76,12 +71,17 @@ export default function SegmentTable({
       accessorKey: "name",
       header: "Name",
       cell: ({ row }) => (
-        <button
-          onClick={() => onSegmentFocus(row.original)}
-          className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-        >
-          {row.original.name}
-        </button>
+        <div className="flex items-center">
+          <button
+            onClick={() => onSegmentFocus(row.original)}
+            className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mr-2"
+          >
+            {row.original.name}
+          </button>
+          {userSegments[row.original.id]?.effort_count > 0 && (
+            <CheckCircle className="h-4 w-4 text-green-500" />
+          )}
+        </div>
       ),
     },
     {
@@ -138,7 +138,7 @@ export default function SegmentTable({
           onOpenChange={() => toggleSection(region)}
         >
           <CollapsibleTrigger asChild>
-            <div className=" flex items-center cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+          <div className="flex items-center cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
               {openSections[region] ? (
                 <ChevronDown className="mr-2 h-4 w-4" />
               ) : (
@@ -155,10 +155,6 @@ export default function SegmentTable({
               onSortingChange={setSorting}
               columnFilters={columnFilters}
               onColumnFiltersChange={setColumnFilters}
-              getCoreRowModel={getCoreRowModel()}
-              getSortedRowModel={getSortedRowModel()}
-              getFilteredRowModel={getFilteredRowModel()}
-              getPaginationRowModel={getPaginationRowModel()}
             />
           </CollapsibleContent>
         </Collapsible>

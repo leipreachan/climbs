@@ -6,7 +6,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 import SegmentPopup from './SegmentPopup'
 import ReactDOMServer from 'react-dom/server'
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
 
 interface Segment {
   id: number
@@ -31,9 +31,9 @@ interface SegmentMapProps {
 }
 
 export default function SegmentMap({ segments, selectedSegments, userSegments, focusedSegment }: SegmentMapProps) {
-  const mapContainer = useRef<HTMLDivElement>(null)
-  const map = useRef<mapboxgl.Map | null>(null)
-  const popupRef = useRef(new mapboxgl.Popup({ offset: 15 }))
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<mapboxgl.Map | null>(null);
+  const popupRef = useRef(new mapboxgl.Popup({ offset: 15 }));
   const segmentDefaultColor = "#FF8800";
 
   useEffect(() => {

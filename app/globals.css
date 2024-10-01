@@ -76,3 +76,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.stravaConnect {
+  background: url("/btn_strava_connectwith_orange.png");
+  width: 193px;
+  height: 48px;
+}

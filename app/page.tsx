@@ -1,28 +1,50 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSession, signIn } from "next-auth/react"
 import SegmentTable from '@/components/SegmentTable'
 import SegmentMap from '@/components/SegmentMap'
+import { Button } from '@/components/ui/button'
+
+interface Segment {
+  id: number
+  name: string
+  distance: number
+  average_grade: number
+  maximum_grade: number
+  region: string
+  start_latlng: [number, number]
+  end_latlng: [number, number]
+  map: {
+    polyline: string
+  }
+}
 
 export default function Home() {
-  const [segments, setSegments] = useState([])
-  const [selectedSegments, setSelectedSegments] = useState({})
-  const [userSegments, setUserSegments] = useState({})
-  const [focusedSegment, setFocusedSegment] = useState(null)
+  const { data: session } = useSession()
+  const [segments, setSegments] = useState<Segment[]>([])
+  const [selectedSegments, setSelectedSegments] = useState<Record<number, boolean>>({})
+  const [userSegments, setUserSegments] = useState<Record<number, { effort_count: number }>>({})
+  const [focusedSegment, setFocusedSegment] = useState<Segment | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     async function fetchSegments() {
       try {
         const response = await fetch('/api/segments')
         if (!response.ok) {
-          throw new Error('Failed to fetch segments')
+          const errorData = await response.json()
+          throw new Error(errorData.error || 'Failed to fetch segments')
         }
         const data = await response.json()
+        if (!Array.isArray(data) || data.length === 0) {
+          throw new Error('Invalid or empty segments data')
+        }
         setSegments(data)
       } catch (err) {
-        setError(err.message)
+        console.error('Error fetching segments:', err)
+        setError(err instanceof Error ? err.message : 'An unknown error occurred')
       } finally {
         setIsLoading(false)
       }
@@ -31,18 +53,23 @@ export default function Home() {
     fetchSegments()
   }, [])
 
-  const handleCheckSegment = (segmentId) => {
+  const handleCheckSegment = (segmentId: number) => {
     setSelectedSegments(prev => ({
       ...prev,
       [segmentId]: !prev[segmentId]
     }))
   }
 
-  const handleSegmentFocus = (segment) => {
+  const handleSegmentFocus = (segment: Segment) => {
     setFocusedSegment(segment)
   }
 
   const checkUserResults = async () => {
+    if (!session) {
+      signIn("strava")
+      return
+    }
+
     try {
       const response = await fetch('/api/user-segments')
       if (!response.ok) {
@@ -52,7 +79,7 @@ export default function Home() {
       setUserSegments(userSegmentsData)
     } catch (err) {
       console.error('Error fetching user segments:', err)
-      // You might want to set an error state here as well
+      setError('Failed to fetch user segments. Please try again.')
     }
   }
 
@@ -61,7 +88,15 @@ export default function Home() {
   }
 
   if (error) {
-    return <div className="container mx-auto p-4">Error: {error}</div>
+    return (
+      <div className="container mx-auto p-4">
+        <h1 className="text-3xl font-bold mb-4">Error</h1>
+        <p className="text-red-500">{error}</p>
+        <p className="mt-4">
+          Please make sure that the &apos;data/segments.json&apos; file exists and contains valid segment data.
+        </p>
+      </div>
+    )
   }
 
   return (
@@ -71,11 +106,12 @@ export default function Home() {
         <SegmentTable 
           segments={segments}
           selectedSegments={selectedSegments}
+          userSegments={userSegments}
           onSegmentCheck={handleCheckSegment}
           onSegmentFocus={handleSegmentFocus}
           onCheckUserResults={checkUserResults}
         />
-        <div className="h-[80vh]">
+        <div className="h-[600px]">
           <SegmentMap 
             segments={segments}
             selectedSegments={selectedSegments}
@@ -84,6 +120,9 @@ export default function Home() {
           />
         </div>
       </div>
+      {!session && (
+        <Button onClick={() => signIn("strava")} className="mt-4 stravaConnect" />
+      )}
     </main>
   )
 }
