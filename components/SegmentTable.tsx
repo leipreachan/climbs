@@ -130,13 +130,14 @@ export default function SegmentTable({
         className="max-w-sm"
       />
       {Object.entries(segmentsByRegion).map(([region, regionSegments]) => (
+        <div key={region} className='shadow-lg rounded-lg border'>
         <Collapsible
           key={region}
           open={openSections[region]}
           onOpenChange={() => toggleSection(region)}
         >
           <CollapsibleTrigger asChild>
-          <div className="flex items-center cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white border hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+          <div className="flex items-left cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
               {openSections[region] ? (
                 <ChevronDown className="mr-2 h-4 w-4" />
               ) : (
@@ -156,6 +157,7 @@ export default function SegmentTable({
             />
           </CollapsibleContent>
         </Collapsible>
+        </div>
       ))}
     </div>
   )

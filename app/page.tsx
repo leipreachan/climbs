@@ -120,7 +120,7 @@ export default function Home() {
         </div>
       </div>
       {!session && (
-        <Button onClick={() => signIn("strava")} className="mt-4 stravaConnect" />
+        <Button onClick={() => signIn("strava")} variant="ghost" className="stravaConnect" />
       ) || (
         <Button onClick={checkUserResults} className="mt-4">
         Check my results
