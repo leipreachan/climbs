@@ -32,7 +32,6 @@ interface SegmentTableProps {
   userSegments: Record<number, { effort_count: number }>
   onSegmentCheck: (segmentId: number) => void
   onSegmentFocus: (segment: Segment) => void
-  onCheckUserResults: () => void
 }
 
 export default function SegmentTable({
@@ -41,7 +40,6 @@ export default function SegmentTable({
   userSegments,
   onSegmentCheck,
   onSegmentFocus,
-  onCheckUserResults
 }: SegmentTableProps) {
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({})
   const [sorting, setSorting] = useState<SortingState>([])
@@ -138,13 +136,13 @@ export default function SegmentTable({
           onOpenChange={() => toggleSection(region)}
         >
           <CollapsibleTrigger asChild>
-          <div className="flex items-center cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+          <div className="flex items-center cursor-pointer w-full justify-start bg-white text-gray-900 hover:text-white border hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
               {openSections[region] ? (
                 <ChevronDown className="mr-2 h-4 w-4" />
               ) : (
                 <ChevronRight className="mr-2 h-4 w-4" />
               )}
-              {region} ({regionSegments.length} segments)
+              {region} ({regionSegments.length} segment{regionSegments.length>1 && "s" || ""})
             </div>
           </CollapsibleTrigger>
           <CollapsibleContent>
@@ -159,9 +157,6 @@ export default function SegmentTable({
           </CollapsibleContent>
         </Collapsible>
       ))}
-      <Button onClick={onCheckUserResults} className="mt-4">
-        Check my results
-      </Button>
     </div>
   )
 }

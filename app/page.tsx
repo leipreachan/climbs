@@ -109,7 +109,6 @@ export default function Home() {
           userSegments={userSegments}
           onSegmentCheck={handleCheckSegment}
           onSegmentFocus={handleSegmentFocus}
-          onCheckUserResults={checkUserResults}
         />
         <div className="h-[600px]">
           <SegmentMap 
@@ -122,6 +121,10 @@ export default function Home() {
       </div>
       {!session && (
         <Button onClick={() => signIn("strava")} className="mt-4 stravaConnect" />
+      ) || (
+        <Button onClick={checkUserResults} className="mt-4">
+        Check my results
+      </Button>
       )}
     </main>
   )

@@ -23,9 +23,9 @@
       "dark_url": "https://d3o5xota0a1fcr.cloudfront.net/v6/charts/RNPZXKXVZ53KTTVNQ5BS7RI3RNRIML7JG6H5NNQNSLZPGFVBUPUOSERSNTSJR7JN2WGT4U223ITCGPF4MZGO4JHV"
     },
     "climb_category": 1,
-    "city": null,
-    "state": null,
-    "country": null,
+    "city": "Cheddar",
+    "state": "England",
+    "country": "United Kingdom",
     "private": false,
     "hazardous": false,
     "starred": false,
@@ -2797,7 +2797,7 @@
       },
       "destination": "strava://segments/6690966/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6697336,
@@ -2867,7 +2867,7 @@
       },
       "destination": "strava://segments/6697336/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6691287,
@@ -2937,7 +2937,7 @@
       },
       "destination": "strava://segments/6691287/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6691272,
@@ -3007,7 +3007,7 @@
       },
       "destination": "strava://segments/6691272/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6690955,
@@ -3077,7 +3077,7 @@
       },
       "destination": "strava://segments/6690955/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6687990,
@@ -3147,7 +3147,7 @@
       },
       "destination": "strava://segments/6687990/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6688073,
@@ -3217,7 +3217,7 @@
       },
       "destination": "strava://segments/6688073/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6688083,
@@ -3287,7 +3287,7 @@
       },
       "destination": "strava://segments/6688083/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6688008,
@@ -3357,7 +3357,7 @@
       },
       "destination": "strava://segments/6688008/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6697314,
@@ -3427,7 +3427,7 @@
       },
       "destination": "strava://segments/6697314/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6687966,
@@ -3497,7 +3497,7 @@
       },
       "destination": "strava://segments/6687966/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6661216,
@@ -3567,7 +3567,7 @@
       },
       "destination": "strava://segments/6661216/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6690987,
@@ -3637,7 +3637,7 @@
       },
       "destination": "strava://segments/6690987/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6691028,
@@ -3707,7 +3707,7 @@
       },
       "destination": "strava://segments/6691028/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6696481,
@@ -3777,7 +3777,7 @@
       },
       "destination": "strava://segments/6696481/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6690945,
@@ -3847,7 +3847,7 @@
       },
       "destination": "strava://segments/6690945/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6690931,
@@ -3917,7 +3917,7 @@
       },
       "destination": "strava://segments/6690931/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6691007,
@@ -3987,7 +3987,7 @@
       },
       "destination": "strava://segments/6691007/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 810259,
@@ -4057,7 +4057,7 @@
       },
       "destination": "strava://segments/810259/local_legend?categories%5B%5D=overall"
     },
-    "region": "Yourshire"
+    "region": "Yorkshire"
   },
   {
     "id": 6681219,
