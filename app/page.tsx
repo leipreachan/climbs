@@ -125,7 +125,7 @@ export default function Home() {
       {!session && (
         <Button onClick={() => signIn(
           "strava", {
-            callbackUrl: process.env.AUTH_DOMAIN
+            callbackUrl: process.env.NEXT_PUBLIC_AUTH_DOMAIN
           }
         )} variant="ghost" className="stravaConnect" />
       ) || (

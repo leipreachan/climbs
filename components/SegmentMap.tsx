@@ -7,7 +7,7 @@ import SegmentPopup from './SegmentPopup'
 import ReactDOMServer from 'react-dom/server'
 import { Segment } from 'next/dist/server/app-render/types'
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN!
+mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN!
 
 interface SegmentMapProps {
   segments: Segment[]
