@@ -32,12 +32,26 @@ export default function Home() {
   const [isUserDataLoading, setUserDataLoading] = useState(false)
 
   const router = useRouter()
+  const [, setSignInError] = useState<string | null>(null)
 
   const handleSignIn = async () => {
-    const result = await signIn("strava", { callbackUrl: `${window.location}`, redirect: false })
+    try {
+      const result = await signIn("strava", { 
+        callbackUrl: "https://climbs.solorider.cc",
+        redirect: false
+      })
+      
+      console.log("SignIn result:", result)
 
-    if (result?.url) {
-      router.push(result.url)
+      if (result?.error) {
+        setSignInError(result.error)
+      } else if (result?.url) {
+        console.log("Redirecting to:", result.url)
+        router.push(result.url)
+      }
+    } catch (error) {
+      console.error("SignIn error:", error)
+      setSignInError("An unexpected error occurred")
     }
   }
 

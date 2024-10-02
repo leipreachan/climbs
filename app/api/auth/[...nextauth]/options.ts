@@ -6,6 +6,11 @@ export const authOptions: NextAuthOptions = {
     StravaProvider({
       clientId: process.env.STRAVA_CLIENT_ID!,
       clientSecret: process.env.STRAVA_CLIENT_SECRET!,
+      authorization: {
+        params: {
+          redirect_uri: `https://oauth.solorider.cc/api/auth/callback/strava`,
+        },
+      },
     }),
   ],
   callbacks: {
@@ -19,5 +24,5 @@ export const authOptions: NextAuthOptions = {
       session.accessToken = token.accessToken as string
       return session
     },
-    },
+  },
 }
