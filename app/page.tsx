@@ -5,7 +5,7 @@ import { useSession, signIn } from "next-auth/react"
 import SegmentTable from '@/components/SegmentTable'
 import SegmentMap from '@/components/SegmentMap'
 import { Button } from '@/components/ui/button'
-import { env } from 'process'
+import { useRouter } from "next/navigation"
 
 interface Segment {
   id: number
@@ -30,6 +30,16 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isUserDataLoading, setUserDataLoading] = useState(false)
+
+  const router = useRouter()
+
+  const handleSignIn = async () => {
+    const result = await signIn("strava", { callbackUrl: `${window.location}`, redirect: false })
+
+    if (result?.url) {
+      router.push(result.url)
+    }
+  }
 
   useEffect(() => {
     async function fetchSegments() {
@@ -107,7 +117,7 @@ export default function Home() {
     <main className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">Strava Segments</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <SegmentTable 
+        <SegmentTable
           segments={segments}
           selectedSegments={selectedSegments}
           userSegments={userSegments}
@@ -115,7 +125,7 @@ export default function Home() {
           onSegmentFocus={handleSegmentFocus}
         />
         <div className="h-[600px]">
-          <SegmentMap 
+          <SegmentMap
             segments={segments}
             selectedSegments={selectedSegments}
             userSegments={userSegments}
@@ -124,12 +134,12 @@ export default function Home() {
         </div>
       </div>
       {!session && (
-        <Button onClick={() => signIn("strava")} variant="ghost" className="stravaConnect" />
+        <Button onClick={handleSignIn} variant="ghost" className="stravaConnect" />
       ) || (
-        <Button onClick={checkUserResults} className="mt-4" disabled={isUserDataLoading}>
-        {(isUserDataLoading && ("Loading your data... (it may take a while...)") || ("Check my Strava results"))}
-      </Button>
-      )}
+          <Button onClick={checkUserResults} className="mt-4" disabled={isUserDataLoading}>
+            {(isUserDataLoading && ("Loading your data... (it may take a while...)") || ("Check my Strava results"))}
+          </Button>
+        )}
     </main>
   )
 }
