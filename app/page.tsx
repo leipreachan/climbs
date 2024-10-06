@@ -5,7 +5,6 @@ import { useSession, signIn } from "next-auth/react"
 import SegmentTable from '@/components/SegmentTable'
 import SegmentMap from '@/components/SegmentMap'
 import { Button } from '@/components/ui/button'
-import { useRouter } from "next/navigation"
 
 interface Segment {
   id: number
@@ -31,28 +30,9 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null)
   const [isUserDataLoading, setUserDataLoading] = useState(false)
 
-  const router = useRouter()
-  const [, setSignInError] = useState<string | null>(null)
-
-  const handleSignIn = async () => {
-    try {
-      const result = await signIn("strava", { 
-        callbackUrl: "https://climbs.solorider.cc",
-        redirect: false
-      })
-      
-      console.log("SignIn result:", result)
-
-      if (result?.error) {
-        setSignInError(result.error)
-      } else if (result?.url) {
-        console.log("Redirecting to:", result.url)
-        router.push(result.url)
-      }
-    } catch (error) {
-      console.error("SignIn error:", error)
-      setSignInError("An unexpected error occurred")
-    }
+  const handleConnectStrava = async () => {
+    const currentUrl = encodeURIComponent(window.location.href);
+    window.location.href = `api/auth/initiate?callbackUrl=${currentUrl}`
   }
 
   useEffect(() => {
@@ -148,7 +128,7 @@ export default function Home() {
         </div>
       </div>
       {!session && (
-        <Button onClick={handleSignIn} variant="ghost" className="stravaConnect" />
+        <Button onClick={handleConnectStrava} variant="ghost" className="stravaConnect" />
       ) || (
           <Button onClick={checkUserResults} className="mt-4" disabled={isUserDataLoading}>
             {(isUserDataLoading && ("Loading your data... (it may take a while...)") || ("Check my Strava results"))}

@@ -1,11 +1,10 @@
-import { getServerSession } from "next-auth/next"
-import { authOptions } from "../auth/[...nextauth]/options"
 import { NextResponse } from 'next/server'
 import fs from 'fs/promises'
 import path from 'path'
+import { getSession } from "@/lib/server-utils"
 
 export async function GET() {
-  const session = await getServerSession(authOptions)
+  const session = getSession()
 
   if (!session || !session.accessToken) {
     return NextResponse.json({ error: "Not authenticated" }, { status: 401 })
