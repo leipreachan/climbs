@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useSession, signIn } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import SegmentTable from '@/components/SegmentTable'
 import SegmentMap from '@/components/SegmentMap'
 import { Button } from '@/components/ui/button'
@@ -21,7 +21,7 @@ interface Segment {
 }
 
 export default function Home() {
-  const { data: session } = useSession()
+  const { status } = useSession()
   const [segments, setSegments] = useState<Segment[]>([])
   const [selectedSegments, setSelectedSegments] = useState<Record<number, boolean>>({})
   const [userSegments, setUserSegments] = useState<Record<number, { effort_count: number, pr_elapsed_time: number }>>({})
@@ -29,11 +29,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [isUserDataLoading, setUserDataLoading] = useState(false)
-
-  const handleConnectStrava = async () => {
-    const currentUrl = encodeURIComponent(window.location.href);
-    window.location.href = `api/auth/initiate?callbackUrl=${currentUrl}`
-  }
 
   useEffect(() => {
     async function fetchSegments() {
@@ -59,6 +54,12 @@ export default function Home() {
     fetchSegments()
   }, [])
 
+  useEffect(() => {
+    if (status === 'authenticated') {
+      checkUserResults()
+    }
+  }, [status])
+
   const handleCheckSegment = (segmentId: number) => {
     setSelectedSegments(prev => ({
       ...prev,
@@ -70,12 +71,12 @@ export default function Home() {
     setFocusedSegment(segment)
   }
 
-  const checkUserResults = async () => {
-    if (!session) {
-      signIn("strava")
-      return
-    }
+  const handleConnectStrava = () => {
+    const currentUrl = encodeURIComponent(window.location.href)
+    window.location.href = `https://oauth.solorider.cc/api/auth/signin?callbackUrl=${currentUrl}`
+  }
 
+  const checkUserResults = async () => {
     setUserDataLoading(true);
     try {
       const response = await fetch('/api/user-segments')
@@ -127,7 +128,7 @@ export default function Home() {
           />
         </div>
       </div>
-      {!session && (
+      {status === 'unauthenticated' && (
         <Button onClick={handleConnectStrava} variant="ghost" className="stravaConnect" />
       ) || (
           <Button onClick={checkUserResults} className="mt-4" disabled={isUserDataLoading}>
