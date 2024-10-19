@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 
+const useSecureCookies = (process.env.NEXTAUTH_URL || '').startsWith('https://');
+const cookiePrefix = useSecureCookies ? '__Secure-' : ''
 export async function GET() {
-  const sessionCookie = cookies().get('session')
+  const sessionCookie = cookies().get(`${cookiePrefix}next-auth.session-token`)
   let session = null
 
   if (sessionCookie) {
