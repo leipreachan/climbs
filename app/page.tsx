@@ -73,7 +73,7 @@ export default function Home() {
 
   const handleConnectStrava = () => {
     const currentUrl = encodeURIComponent(window.location.href)
-    window.location.href = `https://oauth.solorider.cc/api/auth/signin?callbackUrl=${currentUrl}`
+    window.location.href = `https://oauth.solorider.cc/auth/signin?callbackUrl=${currentUrl}`
   }
 
   const checkUserResults = async () => {

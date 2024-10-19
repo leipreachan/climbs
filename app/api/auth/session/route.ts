@@ -1,11 +1,36 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
 
-export async function POST(request: Request) {
-  const { session, originalUrl } = await request.json()
+export async function GET() {
+  const sessionCookie = cookies().get('session')
+  let session = null
 
+  if (sessionCookie) {
+    try {
+      session = JSON.parse(sessionCookie.value)
+    } catch (error) {
+      console.error('Error parsing session cookie:', error)
+    }
+  }
+
+  const response = NextResponse.json(session)
+
+  // Set CORS headers
+  response.headers.set('Access-Control-Allow-Origin', 'https://climbs.solorider.cc')
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+  response.headers.set('Access-Control-Allow-Credentials', 'true')
+
+  return response
+}
+
+export async function POST(request: Request) {
+  const { session } = await request.json()
+
+  const response = NextResponse.json({ success: true })
+  
   // Set a cookie with the session data
-  cookies().set('session', JSON.stringify(session), {
+  response.cookies.set('session', JSON.stringify(session), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'none', // Allow cross-site cookie setting
@@ -14,10 +39,9 @@ export async function POST(request: Request) {
   })
 
   // Set CORS headers
-  const response = NextResponse.json({ success: true, redirectUrl: originalUrl })
-  response.headers.set('Access-Control-Allow-Origin', 'https://oauth.solorider.cc')
-  response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS')
-  response.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+  response.headers.set('Access-Control-Allow-Origin', process.env.OAUTH_DOMAIN || 'https://oauth.solorider.cc')
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   response.headers.set('Access-Control-Allow-Credentials', 'true')
 
   return response
@@ -26,9 +50,11 @@ export async function POST(request: Request) {
 // Handle OPTIONS request for CORS preflight
 export async function OPTIONS() {
   const response = new NextResponse(null, { status: 200 })
-  response.headers.set('Access-Control-Allow-Origin', 'https://oauth.solorider.cc')
-  response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS')
-  response.headers.set('Access-Control-Allow-Headers', 'Content-Type')
+  
+  response.headers.set('Access-Control-Allow-Origin', process.env.OAUTH_DOMAIN || 'https://oauth.solorider.cc')
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   response.headers.set('Access-Control-Allow-Credentials', 'true')
+  
   return response
 }
