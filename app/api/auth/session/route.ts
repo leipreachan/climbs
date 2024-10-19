@@ -6,14 +6,12 @@ const cookiePrefix = useSecureCookies ? '__Secure-' : ''
 const sessionCookieName = `${cookiePrefix}next-auth.session-token`;
 export async function GET() {
   const sessionCookie = cookies().get(sessionCookieName)
-  console.log(sessionCookieName);
-  console.log(sessionCookie);
 
   let session = null;
 
   if (sessionCookie) {
     try {
-      session = JSON.parse(sessionCookie.value)
+      session = sessionCookie.value
     } catch (error) {
       console.error('Error parsing session cookie:', error)
     }
