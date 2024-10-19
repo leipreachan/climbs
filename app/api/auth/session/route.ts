@@ -3,9 +3,13 @@ import { cookies } from 'next/headers'
 
 const useSecureCookies = (process.env.NEXTAUTH_URL || '').startsWith('https://');
 const cookiePrefix = useSecureCookies ? '__Secure-' : ''
+const sessionCookieName = `${cookiePrefix}next-auth.session-token`;
 export async function GET() {
-  const sessionCookie = cookies().get(`${cookiePrefix}next-auth.session-token`)
-  let session = null
+  const sessionCookie = cookies().get(sessionCookieName)
+  console.log(sessionCookieName);
+  console.log(sessionCookie);
+
+  let session = null;
 
   if (sessionCookie) {
     try {
@@ -32,7 +36,7 @@ export async function POST(request: Request) {
   const response = NextResponse.json({ success: true })
   
   // Set a cookie with the session data
-  response.cookies.set('session', JSON.stringify(session), {
+  response.cookies.set(sessionCookieName, JSON.stringify(session), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'none', // Allow cross-site cookie setting
